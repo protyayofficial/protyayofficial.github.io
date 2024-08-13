@@ -8,6 +8,12 @@ collection: portfolio
 
 The proper classification of social media images in a timely manner is a very critical component of how effective response and recovery operations would be in a disaster ridden scenario. This paper enunciates ConvSFNet as a new architecture for disaster image classification, where ConvNeXt has been combined with the Squeeze-and-Excitation block and the Feature Pyramid Network structure. Using the MEDIC dataset, thorough experiments were conducted with models like DenseNet121, EfficientNet-B1, ResNet50, SqueezeNet, and VGG16 for performance comparison. All our results outperform the baseline models on accuracy, weighted precision, recall, and F1-score on all four classification tasks: Damage Severity, Disaster Type, Humanitarian, and Informative. ConvSFNet improved the average F1-score by 2.41\%, excelling in the ``severe'' damage category, very relevant in scenarios of disaster management. This research points to the effectiveness of integrating SE blocks and FPN to improve feature extraction and classification in disaster image analysis. These results illustrate the great promise ConvSFNet holds for real-time disaster response and management by opening further paths for future research in this domain.
 
+## Authors
+
+- Biplaw Debnath
+- Komal Kumawat
+- Protyay Dey
+
 ## Technologies Used
 
 - PyTorch
