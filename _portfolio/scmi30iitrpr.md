@@ -42,6 +42,10 @@ We present SCMI30-IITRPR, a dataset for smartphone camera model identification (
 
 The SCMI30-IITRPR dataset must be used for research and education purposes only. The dataset is designed primarily to facilitate research on camera model identification (CMI) but could also be beneficial for other tasks such as individual camera device forensics, image classification, and object recognition. Researchers that make use of the dataset should cite this article and the [https://doi.org/10.34740/kaggle/dsv/7589186](doi.org/10.34740/kaggle/dsv/7589186)
 
+## Preprint
+
+The paper can be found at TechXriv [https://www.techrxiv.org/doi/full/10.36227/techrxiv.170861968.80378739](doi/full/10.36227/techrxiv.170861968.80378739)
+
 ## Licenses
 
 The code is available under the GNU General Public License v3, and the dataset is provided under the Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license.
