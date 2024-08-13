@@ -1,6 +1,6 @@
 ---
 title: "ConvSFNet: A Novel Architecture for Disaster Image Analysis"
-excerpt: "This project presents ConvSFNet, a novel architecture combining ConvNeXt, Squeeze-and-Excitation blocks, and Feature Pyramid Networks for improved disaster image classification. Using the MEDIC dataset, ConvSFNet outperformed traditional models like DenseNet121 and EfficientNet-B1 across various metrics, including accuracy and F1-score. It notably increased the average F1-score by 2.41%, excelling in identifying severe damage—critical for effective disaster response. This work underscores the potential of integrating SE blocks and FPN for advancing real-time disaster management.<br/><img src='/images/convsfnet.png' align = 'right'>"
+excerpt: "This project presents ConvSFNet, a novel architecture combining ConvNeXt, Squeeze-and-Excitation blocks, and Feature Pyramid Networks for improved disaster image classification. Using the MEDIC dataset, ConvSFNet outperformed traditional models like DenseNet121 and EfficientNet-B1 across various metrics, including accuracy and F1-score. It notably increased the average F1-score by 2.41%, excelling in identifying severe damage—critical for effective disaster response. This work underscores the potential of integrating SE blocks and FPN for advancing real-time disaster management.<br/><img src='/images/convsfnet.png'>"
 collection: portfolio
 ---
 
