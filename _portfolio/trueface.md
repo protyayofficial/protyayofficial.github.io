@@ -30,4 +30,4 @@ The proliferation of image manipulation techniques, including DeepFake technolog
 
 ## Access the paper
 
-https://doi.org/10.1007/978-3-031-58174-8_41
+[https://doi.org/10.1007/978-3-031-58174-8_41](doi.org/10.1007/978-3-031-58174-8_41)
