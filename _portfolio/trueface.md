@@ -27,3 +27,7 @@ The proliferation of image manipulation techniques, including DeepFake technolog
 - Proposed the methodology and conducted all experiments.
 - Co-Authored the complete manuscript for the project.
 - Successfully presented the research at International Conference on Computer Vision and Image Processing (CVIP), Indian Institute of Technology Jammu, 2023.
+
+## Access the paper
+
+https://doi.org/10.1007/978-3-031-58174-8_41
