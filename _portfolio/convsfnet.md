@@ -30,4 +30,4 @@ The proper classification of social media images in a timely manner is a very cr
 
 ## Codebase
 
-[https://github.com/protyayofficial/medic-cvip](protyayofficial/medic-cvip)
+[https://github.com/protyayofficial/confsfnet](protyayofficial/convsfnet)

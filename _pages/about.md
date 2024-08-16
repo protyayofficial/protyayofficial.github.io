@@ -15,13 +15,13 @@ Hi there! I’m Protyay, an MTech graduate in Artificial Intelligence from the I
 
 📚 Current Projects
 
-- ConvSFNet: A Novel Architecture for Disaster Image Analysis
-
-- HYPC-Net: A Hybrid Yoga Pose Classification Network
+- Source Camera Model Identification using Entropy and Transformers
 
 - Facial Emotion Detection
 
-- Source Camera Identification via Adversarial Attacks and Image Perturbations
+- Source Camera Device Identification
+
+- Source Camera Model Identification via Adversarial Attacks and Image Perturbations
 
 🎮 Hobbies
 
