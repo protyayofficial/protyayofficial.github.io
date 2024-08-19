@@ -1,10 +1,9 @@
 ---
-title: "Vision Architectures Implementations"
-excerpt: "Vision Architectures Implementations" is a project where I build and explore popular deep learning models using PyTorch. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design."
+title: "Vision Architecture Implementations"
+excerpt: "Developed a Connect Four game with a React frontend and Flask backend. The project includes two gameplay modes: two-player and AI-based play. The AI logic is implemented in Python and interacts with the Flask server. The frontend uses Vite for fast development and Tailwind CSS for styling, offering an intuitive user interface."
 collection: portfolio
 ---
 
-## Vision Architectures Implementations
 
 In this project, I dive into the fundamentals of computer vision by reconstructing widely used CNN models using PyTorch. This project aims to enhance my understanding of these architectures by developing them from scratch, allowing me to explore every layer and function in detail.
 
