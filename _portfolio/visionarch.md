@@ -4,7 +4,7 @@ excerpt: "Vision Architectures Implementations" is a project where I build and e
 collection: portfolio
 ---
 
-## Vision Architectures from Scratch in PyTorch
+## Vision Architectures Implementations
 
 In this project, I dive into the fundamentals of computer vision by reconstructing widely used CNN models using PyTorch. This project aims to enhance my understanding of these architectures by developing them from scratch, allowing me to explore every layer and function in detail.
 
