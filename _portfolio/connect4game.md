@@ -1,9 +1,15 @@
+---
+title: "Vision Architectures Implementations"
+excerpt: "Vision Architectures Implementations" is a project where I build and explore popular deep learning models using PyTorch. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design."
+collection: portfolio
+---
+
 <!-- ---
 title: "Connect Four Game"
 excerpt: "Developed a Connect Four game with a React frontend and Flask backend. The project includes two gameplay modes: two-player and AI-based play. The AI logic is implemented in Python and interacts with the Flask server. The frontend uses Vite for fast development and Tailwind CSS for styling, offering an intuitive user interface."
 collection: portfolio
----
-
+--- -->
+<!--
 The Connect Four game project demonstrates a robust integration of frontend and backend technologies to deliver a seamless gaming experience. Built using React for the frontend and Flask for the backend, this project showcases both interactive UI design and effective AI implementation.
 
 # Project Overview:
@@ -42,10 +48,7 @@ The AI in this project is designed to provide a challenging opponent. The logic 
 - **Future Enhancements**: Potential improvements include implementing additional AI strategies, expanding to multiplayer support over a network, and enhancing the UI with more interactive elements. -->
 
 ---
-title: "Vision Architectures Implementations"
-excerpt: "Vision Architectures Implementations" is a project where I build and explore popular deep learning models using PyTorch. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design."
-collection: portfolio
----
+
 
 ## Vision Architectures Implementations
 
