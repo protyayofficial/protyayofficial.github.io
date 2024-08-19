@@ -1,8 +1,20 @@
+---
+title: "Vision Architectures Implementations"
+excerpt: "Vision Architectures Implementations" is a project where I build and explore popular deep learning models using PyTorch. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design."
+collection: portfolio
+---
+
 ## Vision Architectures from Scratch in PyTorch
 
 ### Overview
 
-In this project, I implement popular vision architectures from scratch using PyTorch. This work is part of my exploration and deep dive into convolutional neural networks (CNNs), enabling me to understand their intricacies and share my findings with the open-source community.
+In this project, I dive into the fundamentals of computer vision by reconstructing widely used CNN models using PyTorch. This project aims to enhance my understanding of these architectures by developing them from scratch, allowing me to explore every layer and function in detail.
+
+The implementation is designed with a strong emphasis on clarity, ensuring that the code is easy to read, follow, and modify. The modular design allows for flexibility, making it simple to integrate these models into other projects or customize them for specific needs. Comprehensive documentation accompanies the code, with detailed explanations and comments to guide others in their learning journey.
+
+Additionally, the project includes tools to generate model summaries, offering valuable insights into the architecture's structure and layer outputs. This makes it an excellent resource for anyone interested in understanding how CNNs are built and how they function in real-world applications.
+
+This project serves both as a learning platform for myself and a contribution to the open-source community, with plans to expand by adding more architectures and features over time, further broadening its application in computer vision tasks.
 
 ---
 
