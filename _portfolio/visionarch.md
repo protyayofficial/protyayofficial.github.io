@@ -17,9 +17,9 @@ This project serves both as a learning platform for myself and a contribution to
 
 ## Architectures Implemented:
 
-- **AlexNet**: The model that revolutionized computer vision by introducing ReLU activation and dropout layers, leading to a dramatic improvement in performance on the ImageNet challenge. It was one of the first deep convolutional neural networks to demonstrate the power of GPUs in training large models.
-- **VGG16 and VGG19**: These models are known for their deep and uniform architecture, consisting of 16 and 19 layers respectively. They employ small (3x3) convolution filters, which stack to create deep networks, leading to better feature extraction. VGG networks are widely recognized for their simplicity and effectiveness, despite their relatively large parameter count.
-- **GoogLeNet**: This architecture introduced the Inception module, which combines filters of different sizes in parallel, allowing the network to capture different levels of detail. It is also known for being computationally efficient, using fewer parameters than similar models, and introducing auxiliary classifiers to help with training.
+- **AlexNet [2012]**: The model that revolutionized computer vision by introducing ReLU activation and dropout layers, leading to a dramatic improvement in performance on the ImageNet challenge. It was one of the first deep convolutional neural networks to demonstrate the power of GPUs in training large models.
+- **VGG16 and VGG19 [2014]**: These models are known for their deep and uniform architecture, consisting of 16 and 19 layers respectively. They employ small (3x3) convolution filters, which stack to create deep networks, leading to better feature extraction. VGG networks are widely recognized for their simplicity and effectiveness, despite their relatively large parameter count.
+- **GoogLeNet [2014]**: This architecture introduced the Inception module, which combines filters of different sizes in parallel, allowing the network to capture different levels of detail. It is also known for being computationally efficient, using fewer parameters than similar models, and introducing auxiliary classifiers to help with training.
 - **More models**: Additional architectures will be added over time.
 
 ---
