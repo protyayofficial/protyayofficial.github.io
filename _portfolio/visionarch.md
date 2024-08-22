@@ -1,6 +1,6 @@
 ---
 title: "Vision Architecture Implementations"
-excerpt: "Developed a Connect Four game with a React frontend and Flask backend. The project includes two gameplay modes: two-player and AI-based play. The AI logic is implemented in Python and interacts with the Flask server. The frontend uses Vite for fast development and Tailwind CSS for styling, offering an intuitive user interface.<br/>"
+excerpt: In this project I build and explore popular deep learning models using PyTorch from scratch following the original literature. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design.<br/>"
 collection: portfolio
 ---
 
@@ -20,6 +20,7 @@ This project serves both as a learning platform for myself and a contribution to
 - **AlexNet [2012]**: The model that revolutionized computer vision by introducing ReLU activation and dropout layers, leading to a dramatic improvement in performance on the ImageNet challenge. It was one of the first deep convolutional neural networks to demonstrate the power of GPUs in training large models.
 - **VGG16 and VGG19 [2014]**: These models are known for their deep and uniform architecture, consisting of 16 and 19 layers respectively. They employ small (3x3) convolution filters, which stack to create deep networks, leading to better feature extraction. VGG networks are widely recognized for their simplicity and effectiveness, despite their relatively large parameter count.
 - **GoogLeNet [2014]**: This architecture introduced the Inception module, which combines filters of different sizes in parallel, allowing the network to capture different levels of detail. It is also known for being computationally efficient, using fewer parameters than similar models, and introducing auxiliary classifiers to help with training.
+- **ResNet [2015]**:  A deep convolutional neural network architecture, probably the most influential architecture of recent times. It introduces the concept of residual learning, which allows the network to learn residual functions with reference to the input layers. By using skip connections, ResNets effectively mitigates the vanishing gradient problem, enabling the training of very deep networks. This architecture is widely used for its efficiency and accuracy in various computer vision applications.
 - **More models**: Additional architectures will be added over time.
 
 ---
@@ -57,3 +58,4 @@ I plan to continue adding more CNN architectures, improving existing implementat
 - **AlexNet Paper**: [Krizhevsky _et al._](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
 - **VGG Paper**: [Simonyan _et al._](https://arxiv.org/pdf/1409.1556)
 - **GoogLeNet Paper**: [Szegedy *et al.*](https://arxiv.org/pdf/1409.4842)
+- **ResNet Paper**: [He _et al._](https://arxiv.org/pdf/1512.03385)
