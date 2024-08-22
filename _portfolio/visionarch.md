@@ -1,6 +1,6 @@
 ---
 title: "Vision Architecture Implementations"
-excerpt: In this project I build and explore popular deep learning models using PyTorch from scratch following the original literature. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design.<br/>"
+excerpt: "In this project I build and explore popular deep learning models using PyTorch from scratch following the original literature. This initiative deepens my understanding of CNNs by constructing them from the ground up, with a focus on clean code, comprehensive documentation, and modular design.<br/>"
 collection: portfolio
 ---
 
