@@ -21,6 +21,7 @@ This project serves both as a learning platform for myself and a contribution to
 - **VGG16 and VGG19 [2014]**: These models are known for their deep and uniform architecture, consisting of 16 and 19 layers respectively. They employ small (3x3) convolution filters, which stack to create deep networks, leading to better feature extraction. VGG networks are widely recognized for their simplicity and effectiveness, despite their relatively large parameter count.
 - **GoogLeNet [2014]**: This architecture introduced the Inception module, which combines filters of different sizes in parallel, allowing the network to capture different levels of detail. It is also known for being computationally efficient, using fewer parameters than similar models, and introducing auxiliary classifiers to help with training.
 - **ResNet [2015]**:  A deep convolutional neural network architecture, probably the most influential architecture of recent times. It introduces the concept of residual learning, which allows the network to learn residual functions with reference to the input layers. By using skip connections, ResNets effectively mitigates the vanishing gradient problem, enabling the training of very deep networks. This architecture is widely used for its efficiency and accuracy in various computer vision applications.
+- **DenseNet [2017]**: It is a powerful deep learning architecture designed to maximize information flow between layers by connecting each layer directly to every other layer in a feed-forward fashion. This dense connectivity pattern reduces the number of parameters, mitigates the vanishing gradient problem, and encourages feature reuse, leading to more efficient training and improved performance. By utilizing dense blocks and transition layers, DenseNet achieves state-of-the-art accuracy while maintaining computational efficiency, making it a popular choice for complex visual recognition tasks.
 - **More models**: Additional architectures will be added over time.
 
 ---
@@ -59,3 +60,4 @@ I plan to continue adding more CNN architectures, improving existing implementat
 - **VGG Paper**: [Simonyan _et al._](https://arxiv.org/pdf/1409.1556)
 - **GoogLeNet Paper**: [Szegedy *et al.*](https://arxiv.org/pdf/1409.4842)
 - **ResNet Paper**: [He _et al._](https://arxiv.org/pdf/1512.03385)
+- **DenseNet Paper**: [Huang _et al._](https://arxiv.org/pdf/1608.06993)
