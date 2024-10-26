@@ -13,7 +13,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-            {/* <span className="text-white text-lg font-semibold">No Image Available</span> */}
           </div>
         )}
       </div>

@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<AboutMe />} /> {/* Set AboutMe as the new home page */}
+          <Route path="/" element={<AboutMe />} /> 
           <Route path="/publications" element={<Publications publications={publications} />} />
           <Route path="/projects" element={<Projects projects={projects} />} />
           <Route path="/resume" element={<Resume pdfUrl="/AcademicCV.pdf" />} />

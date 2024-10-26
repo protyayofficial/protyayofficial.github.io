@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '../components/ui/Card';
-import SocialIcon from '../components/SocialIcon'; // Assuming SocialIcon is in a separate file
+import SocialIcon from '../components/SocialIcon'; 
+import { Helmet } from 'react-helmet';
 import emailjs from 'emailjs-com';
 
 const ConnectWithMe = () => {
@@ -89,6 +90,10 @@ const ConnectWithMe = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Connect with me</title>
+    </Helmet>
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-16 px-4">
       <div className="max-w-4xl mx-auto space-y-16">
         {/* Header Section */}
@@ -188,6 +193,7 @@ const ConnectWithMe = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

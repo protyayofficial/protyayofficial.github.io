@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
-import { Camera, Music, Gamepad, Trophy, ChefHat } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -30,6 +30,10 @@ const AboutMe: React.FC = () => {
   ];
 
   return (
+    <>
+    <Helmet>
+      <title>Home</title>
+    </Helmet>
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       {/* Hero Section remains the same */}
       <section className="relative-1/2 h-screen flex items-center justify-center overflow-hidden">
@@ -177,6 +181,7 @@ const AboutMe: React.FC = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

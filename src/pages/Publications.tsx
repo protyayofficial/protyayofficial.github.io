@@ -1,11 +1,16 @@
 import React from 'react';
 import PublicationCard from '../components/PublicationCard';
 import { Publication } from '../types/types';
+import { Helmet } from 'react-helmet';
 
 const Publications: React.FC<{ publications: Publication[] }> = ({ publications }) => {
   const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
 
   return (
+    <>
+    <Helmet>
+      <title>Publications</title>
+    </Helmet>
     <div className="max-w-7xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold text-white mb-8">Publications</h2>
 
@@ -31,6 +36,7 @@ const Publications: React.FC<{ publications: Publication[] }> = ({ publications 
         </div>
       )}
     </div>
+    </>
   );
 };
 
