@@ -1,26 +1,31 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import AboutMe from './pages/AboutMe'; 
+import Publications from './pages/Publications';
+import Projects from './pages/Projects';
+import Resume from './pages/Resume';
+import ConnectWithMe from './pages/ConnectWithMe';
 
-function App() {
+// Importing data from separate files
+import publications from './data/publications';
+import projects from './data/projects';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<AboutMe />} /> {/* Set AboutMe as the new home page */}
+          <Route path="/publications" element={<Publications publications={publications} />} />
+          <Route path="/projects" element={<Projects projects={projects} />} />
+          <Route path="/resume" element={<Resume pdfUrl="/AcademicCV.pdf" />} />
+          <Route path="/connect" element={<ConnectWithMe />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App;
