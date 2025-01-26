@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Project } from '../types/types';
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {

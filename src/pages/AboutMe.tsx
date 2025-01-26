@@ -50,9 +50,13 @@ const AboutMe: React.FC = () => {
             />
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-6 animate-fade-in">
-            Protyay sends you regards!
-          </h1>
+          <div className="h-auto overflow-visible">
+            <h1 className="text-4xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-6 animate-fade-in leading-normal">
+              Protyay sends you regards!
+            </h1>
+          </div>
+
+
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-delayed">
             I am Computer Vision and AI enthusiast. 
           </p>
