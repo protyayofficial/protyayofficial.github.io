@@ -1,1 +1,1 @@
-# This repository serves as my personal research portfolio webiste. I have used [Avalanche](https://github.com/lolipopshock/avalanche) theme to design the webite.
+### This repository serves as my personal research portfolio website. I have used [Avalanche](https://github.com/lolipopshock/avalanche) theme to design the website.
