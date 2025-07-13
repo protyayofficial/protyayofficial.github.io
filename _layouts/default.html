@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+
+  <body>
+    <div class="section">
+      <div class="container">
+        {% if page.show_nav != false %} {% include nav.html %} {% endif %} {{
+        content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <!-- Auto-open external links in new tab -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("a[href^='http']");
+        links.forEach((link) => {
+          if (!link.href.includes(window.location.hostname)) {
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noopener noreferrer");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

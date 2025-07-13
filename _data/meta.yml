@@ -1,0 +1,23 @@
+index:
+  welcome_message: >
+    About Me
+  research_interest_message: >
+    Research Interests
+  personal_photo: "/assets/profile.jpg"
+  news_highlight_color: 'is-info'
+  personal_description: |
+    I am a PhD student in the Department of Computer Science and Engineering at the University at Buffalo (SUNY), working in the Computer Vision and Machine Learning (CVML) Lab under the supervision of [Dr. Vishnu Lokhande](https://vlokhande-ub.github.io). I also serve as a Teaching Assistant at UB.
+
+    Prior to this, I completed my Master’s in Artificial Intelligence from the Indian Institute of Technology Ropar, where my thesis on Source Camera Forensics was advised by [Dr. Puneet Goyal](https://sites.google.com/view/goyalpuneet). I was privileged to collaborate with [Prof. Gaurav Sharma](https://hajim.rochester.edu/ece/sites/gsharma/) from the University of Rochester during this time.
+
+    Before starting my PhD, I worked as a Junior Research Fellow at the CVPR Lab, IIT Ropar, under the guidance of [Dr. Santosh Kumar Vipparthi](https://skvipparthi.github.io), focusing on Federated Learning in Aerial Scene Classification.
+
+    I completed my B.Tech at the University of Engineering and Management, Jaipur, where my undergraduate thesis was advised by [Mr. Dipta Mukherjee](https://www.linkedin.com/in/dipta-mukherjee-21564a21/).
+
+  research_interest: |
+    My research is focused on Computer Vision and Deep Learning. My current work is focused on Application of Federated Learning for Aerial Scene Understanding, with a particular interest in extreme data heterogeneity. Previously I have worked on Source Camera Forensics, where I developed techniques for camera model idenfication and also contributed to the community by developing a large scale source camera forensics dataset. 
+  
+
+  
+footnote: Created and maintained by Protyay Dey. 
+  

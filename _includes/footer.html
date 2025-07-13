@@ -1,0 +1,7 @@
+<footer class="footer">
+  <div class="content has-text-centered is-size-7">
+    {% capture full_footnote %} {{ site.data.meta.footnote }} Last Updated: {{
+    site.time | date: "%B %d, %Y" }} {% endcapture %}
+    <h5>{{ full_footnote | markdownify }}</h5>
+  </div>
+</footer>

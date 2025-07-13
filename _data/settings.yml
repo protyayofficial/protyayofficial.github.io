@@ -1,0 +1,39 @@
+# If you are not using Google Analytics, please change 'google-ID' to an empty string
+# google-ID: x
+# disqus-ID: x
+# utterances-repo: x
+
+menu:
+- {name: 'About', file: ''}
+- {name: 'Research', file: 'research.html'}
+# - {name: 'Beyond Research', file: 'beyondresearch.html'}
+
+social:
+- {name: 'mail', icon: 'fas fa-at', link: 'mailto:protyayofficial@gmail.com',
+   display-link: 'protyayofficial@gmail.com', display-icon: "fas fa-envelope-square"}
+- {name: 'github', icon: 'fab fa-github', link: 'https://github.com/protyayofficial', 
+   display-link: 'protyayofficial', display-icon: "fab fa-github-square"}
+- {name: 'linkedin', icon: 'fab fa-linkedin', link: 'https://linkedin.com/in/protyaydey', 
+   display-link: '@protyaydey', display-icon: "fab fa-linkedin"}
+- {name: 'gscholar', icon: 'ai ai-google-scholar', link: 'https://scholar.google.com/citations?user=hmnHR0EAAAAJ', 
+   display-link: '@hmnHR0EAAAAJ', display-icon: "ai ai-google-scholar"}
+
+
+publication: 
+    types:
+      - 'all'
+      - 'workshop'
+      - 'conference'
+    topics:
+      - {name: 'All',            id: 'all',  description: ''}
+      - {name: 'Deep Learning',  id: 'dl',   description: ''}
+      - {name: 'Source Camera Forensics',            id: 'scf',  description: ''}
+      # - {name: 'Machine Learning',          id: 'ml', description: ''}
+    default_img: "/assets/publications/placeholder.png"
+    tag_list: 
+      - {name: "paper",  icon: "far fa-file-pdf"}
+      - {name: "website",icon: "fas fa-globe-americas"}
+      - {name: "arxiv",  icon: "ai ai-arxiv"}  
+      - {name: "poster", icon: "far fa-file-image"}
+      - {name: "video",  icon: "fab fa-youtube"}
+      - {name: "code",   icon: "fas fa-code"}

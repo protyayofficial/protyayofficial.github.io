@@ -1,0 +1,350 @@
+---
+---
+
+@charset "utf-8";
+
+// Fonts – DO NOT TOUCH
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,500|IBM+Plex+Serif:400,400i,700,700i|Cormorant+Garamond:600|Roboto+Condensed&display=swap');
+$family-primary: 'IBM Plex Serif', serif;
+$family-secondary: 'Frank Ruhl Libre', serif;
+$family-sans-serif: 'Roboto Condensed', sans-serif;
+
+// Size Variables
+$footer-padding: 1rem 1rem 1rem;
+$footer-background-color: #3a4047; // Lighter footer background
+$navbar-padding-vertical: 0.25rem;
+$navbar-height: 1rem;
+$divider-thickness: 0.075rem;
+$tabs-border-bottom-width: 0.075rem;
+
+// Layout Flags
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Import Bulma
+@import "bulma/bulma";
+@import "bulma-divider/src/sass/index";
+
+// ===== 🎨 Dark Theme Colors =====
+$bg-dark: #1b1f24;
+$text-light: #ffffff;
+$surface-dark: #161b22;
+$border-color: #30363d;
+$link-color: #58a6ff;
+$link-hover: #1f6feb;
+$footer-bg: #3a4047; // Lighter footer background
+
+// ===== 🌙 Global Dark Mode Setup =====
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $bg-dark !important;
+  color: $text-light !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $family-primary;
+  display: flex;
+  flex-direction: column;
+}
+
+// Main content area should grow to fill available space
+.main-content, main, .container {
+  flex: 1;
+}
+
+// Prevent white gap after footer
+body::after {
+  content: "";
+  display: block;
+  height: 0px;
+  background: none;
+}
+
+// ===== 🔗 Enhanced Link Styling =====
+a {
+  color: $link-color !important;
+  text-decoration: none;
+  background-color: transparent !important;
+  
+  &:hover, &:focus, &:active {
+    color: $link-hover !important;
+    background-color: transparent !important;
+    text-decoration: none;
+  }
+}
+
+// ===== 🧭 Navigation Links (About, Research, Blog) =====
+.navbar-item, .navbar-link {
+  color: $text-light !important;
+  background-color: transparent !important;
+  
+  &:hover, &:focus, &:active {
+    color: $text-light !important;
+    background-color: transparent !important;
+  }
+}
+
+// Specific targeting for navbar menu items
+.navbar-menu .navbar-item {
+  color: $text-light !important;
+  background-color: transparent !important;
+  
+  &:hover, &:focus, &:active {
+    color: $text-light !important;
+    background-color: transparent !important;
+  }
+}
+
+// ===== 🎯 FontAwesome Icons with White Backgrounds =====
+.fa, .fas, .far, .fal, .fab {
+  color: $bg-dark !important; // Black text on white background
+  background-color: $text-light !important; // White background
+  padding: 0.5em !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+  text-align: center !important;
+  min-width: 1.5em !important;
+  
+  &:hover {
+    color: $bg-dark !important;
+    background-color: lighten($text-light, 5%) !important;
+  }
+}
+
+// For FontAwesome icons inside links
+a .fa, a .fas, a .far, a .fal, a .fab {
+  color: $bg-dark !important;
+  background-color: $text-light !important;
+  
+  &:hover {
+    color: $bg-dark !important;
+    background-color: lighten($text-light, 5%) !important;
+  }
+}
+
+// ===== 🎯 Other Icon Links (SVG, generic icons) =====
+.icon, .icon a, .icon svg, .icon i {
+  color: $text-light !important;
+  background-color: transparent !important;
+  fill: currentColor !important;
+}
+
+// Social media icons and similar (non-FA)
+.social-icon, .social-link, 
+[class*="icon-"]:not([class*="fa"]), 
+.icon-github, .icon-linkedin, .icon-at {
+  color: $text-light !important;
+  background-color: transparent !important;
+  
+  &:hover, &:focus, &:active {
+    color: $link-hover !important;
+    background-color: transparent !important;
+  }
+}
+
+// SVG icons specifically
+svg {
+  fill: currentColor !important;
+  background-color: transparent !important;
+}
+
+// ===== 🔧 Force Override for Stubborn Elements =====
+.navbar, .navbar-brand, .navbar-menu, .navbar-start, .navbar-end {
+  background-color: transparent !important;
+  
+  a, .navbar-item, .navbar-link {
+    color: $text-light !important;
+    background-color: transparent !important;
+    
+    &:hover, &:focus, &:active {
+      color: $text-light !important;
+      background-color: transparent !important;
+    }
+  }
+}
+
+// Footer links
+.footer {
+  background-color: $footer-background-color !important;
+  border-top: 1px solid $border-color;
+  margin-top: auto; // This pushes footer to bottom
+  flex-shrink: 0; // Prevent footer from shrinking
+  
+  a:not(.fa):not(.fas):not(.far):not(.fal):not(.fab) {
+    color: $text-light !important;
+    background-color: transparent !important;
+    
+    &:hover, &:focus, &:active {
+      color: $link-hover !important;
+      background-color: transparent !important;
+    }
+  }
+}
+
+// ===== ✏️ Component Overrides for Dark Background =====
+.section, .hero, .card, .box, .content, .navbar {
+  background-color: transparent !important;
+  color: $text-light !important;
+  border-color: $border-color;
+}
+
+// Footer gets its own background (different from other components)
+.footer {
+  color: $text-light !important;
+  border-color: $border-color;
+}
+
+// ===== 🏷 Headings (Fixing black text bug) =====
+h1, h2, h3, h4, h5, h6 {
+  color: $text-light !important;
+}
+
+// ===== 🔘 Button Styling =====
+.button {
+  background-color: $surface-dark;
+  color: $text-light;
+  border: 1px solid $border-color;
+}
+.button:hover {
+  background-color: darken($surface-dark, 5%);
+}
+
+// ===== 💻 Code Styling =====
+pre, code {
+  background-color: $surface-dark !important;
+  color: $text-light !important;
+  border: 1px solid $border-color;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+// ===== 📋 Table Styling =====
+table, th, td {
+  background-color: transparent !important;
+  color: $text-light !important;
+  border-color: $border-color;
+}
+
+// ===== 🏷 Tags in News Section =====
+.tag {
+  background-color: $surface-dark;
+  color: $text-light;
+  border: 1px solid $border-color;
+}
+
+// ===== ✨ Original Avalanche Styling (Unchanged Fonts) =====
+.site-title {
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 2rem;
+  color: $text-light;
+}
+
+.news-time {
+  font-family: $family-sans-serif;
+}
+
+article {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $family-secondary;
+  }
+}
+
+.article-list-date, .article-list-divider, .article-list-minutes, .article-list-cat {
+  font-family: $family-sans-serif;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  
+}
+
+.article-list-item {
+  font-family: $family-sans-serif;
+  font-style: italic;
+  text-transform: capitalize;
+  font-size: 0.85rem;
+}
+
+.article-list-author {
+  color: $text-light;
+  font-size: 1.05rem;
+  font-family: $family-sans-serif;
+}
+
+.article-list-divider {
+  margin: 0 5px;
+}
+
+.article-list-title {
+  font-family: $family-secondary;
+  font-weight: $weight-medium !important;
+  font-size: $size-5 !important;
+}
+
+.article-list-description {
+  margin-top: -0.1rem;
+}
+
+.article-list-footer {
+  margin-top: 0.5rem;
+}
+
+.article-header {
+  margin-bottom: 2rem;
+}
+
+.content .highlight {
+  text-align: left;
+  margin-left: 0em;
+  margin-right: 0em;
+}
+
+// ===== 💬 Utterances Styling =====
+.utterances {
+  max-width: 100%;
+}
+
+// ===== 🎥 Video Embeds =====
+.video_container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 51%;
+}
+.video_container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+// ===== 🔗 Header Anchor Hover Effect =====
+.header-link {
+  position: relative;
+  left: 0.5rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+  -moz-transition: opacity 0.2s ease-in-out 0.1s;
+  -ms-transition: opacity 0.2s ease-in-out 0.1s;
+}
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  opacity: 0.5;
+}
+
+.my-paper-tag {
+  font-size: 1rem !important;
+  background-color: #0d1117 !important; /* dark background */
+  border: 1px solid #58a6ff !important; /* blue border */
+  color: #58a6ff !important; /* blue text */
+  font-weight: bold;
+}
+.my-paper-tag:hover {
+  background-color: #161b22 !important;
+  color: #1f6feb !important;
+}
