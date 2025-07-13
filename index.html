@@ -7,51 +7,279 @@ layout: page
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
 />
 
-<div class="columns">
-  <!-- Left Column: Image + News -->
-  <div class="column is-4">
-    <div class="content">
-      <!-- Profile Photo -->
-      <figure class="image pb-0 mb-0" style="max-width: 300px; margin-left: 0">
-        <img
-          src="{{site.url}}{{site.baseurl}}/{{ site.data.meta.index.personal_photo }}"
-        />
-      </figure>
+<style>
+  /* Custom CSS for enhanced visual appeal */
+  .portfolio-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 
-      <!-- Image credit if any -->
-      {{ site.data.meta.index.image_credit | markdownify }}
-    </div>
+  .profile-section {
+    /* Remove all background and styling */
+  }
 
-    <!-- Recent News (stacked below image) -->
-    <div class="content mt-5">
-      <h3 class="title is-5">Recent News</h3>
-      {% for news in site.data.news limit:3 %}
-      <div class="columns is-mobile mb-2">
-        <div class="column is-4">
-          <span
-            class="tag news-time {% if news.highlight != nil %}
-                        {{ site.data.meta.index.news_highlight_color }}
-                    {% endif %}"
+  .profile-photo {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto 1rem;
+  }
+
+  .profile-photo img {
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-photo:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-content {
+    padding: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .welcome-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    margin-top: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+  }
+
+  .news-section {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .news-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+  }
+
+  .news-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #667eea;
+    transform: translateX(5px);
+  }
+
+  .news-time {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-right: 1rem;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+  }
+
+  .news-title {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #ffffff;
+  }
+
+  .news-title p {
+    margin: 0;
+  }
+
+  .highlight-news .news-time {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
+    }
+    50% {
+      box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5);
+    }
+    100% {
+      box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
+    }
+  }
+
+  .content-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-text p {
+    margin-bottom: 1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .portfolio-container {
+      padding: 1rem;
+    }
+
+    .main-content {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+
+    .welcome-title {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .news-item {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .news-time {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .side-column-wrapper {
+    max-width: 320px; /* same as .profile-photo */
+    margin: 0 auto;
+  }
+  .news-section {
+    width: 100%;
+    max-width: 320px; /* match profile image width */
+    margin: 1.5rem auto 0; /* center in column */
+    padding: 1rem;
+  }
+
+  /* Animation for page load */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.3s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="portfolio-container">
+  <div class="columns is-desktop">
+    <!-- Left Column: Image + News -->
+    <div class="column is-4">
+      <div class="profile-section fade-in">
+        <div class="side-column-wrapper">
+          <!-- Profile Photo -->
+          <figure class="profile-photo">
+            <img
+              src="{{site.url}}{{site.baseurl}}/{{ site.data.meta.index.personal_photo }}"
+              alt="Profile Photo"
+            />
+          </figure>
+
+          <!-- Image credit if any -->
+          <div
+            class="has-text-centered"
+            style="opacity: 0.7; font-size: 0.9rem"
           >
-            {{ news.time }}
-          </span>
+            {{ site.data.meta.index.image_credit | markdownify }}
+          </div>
+
+          <!-- Recent News -->
+          <div class="news-section fade-in-delay">
+            <h3 class="section-title">Recent News</h3>
+            {% for news in site.data.news limit:3 %}
+            <div
+              class="news-item {% if news.highlight != nil %}highlight-news{% endif %}"
+            >
+              <span class="news-time">{{ news.time }}</span>
+              <div class="news-title">{{ news.title | markdownify }}</div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
-        <div class="column is-8">{{ news.title | markdownify }}</div>
       </div>
-      {% endfor %}
     </div>
-  </div>
 
-  <!-- Right Column: About + Research Interests -->
-  <div class="column is-8">
-    <div class="content">
-      <h1 class="title">{{ site.data.meta.index.welcome_message }}</h1>
-      {{ site.data.meta.index.personal_description | markdownify }}
+    <!-- Right Column: About + Research Interests -->
+    <div class="column is-8">
+      <div class="main-content fade-in-delay">
+        <h1 class="welcome-title">
+          {{ site.data.meta.index.welcome_message }}
+        </h1>
+        <div class="content-text">
+          {{ site.data.meta.index.personal_description | markdownify }}
+        </div>
 
-      <h1 class="title">
-        {{ site.data.meta.index.research_interest_message }}
-      </h1>
-      {{ site.data.meta.index.research_interest | markdownify }}
+        <h2 class="section-title">
+          {{ site.data.meta.index.research_interest_message }}
+        </h2>
+        <div class="content-text">
+          {{ site.data.meta.index.research_interest | markdownify }}
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  // Add smooth scrolling and intersection observer for animations
+  document.addEventListener("DOMContentLoaded", function () {
+    // Smooth scroll for any anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+  });
+</script>

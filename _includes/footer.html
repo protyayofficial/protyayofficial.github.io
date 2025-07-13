@@ -1,7 +1,17 @@
+<style>
+  .last-updated {
+    color: #939dfb; /* Choose any hex or named color you like */
+    font-weight: 500;
+  }
+</style>
+
 <footer class="footer">
   <div class="content has-text-centered is-size-7">
-    {% capture full_footnote %} {{ site.data.meta.footnote }} Last Updated: {{
-    site.time | date: "%B %d, %Y" }} {% endcapture %}
+    {% capture full_footnote %} {{ site.data.meta.footnote }}
+    <span class="last-updated"
+      >Last Updated: {{ site.time | date: "%B %d, %Y" }}</span
+    >
+    {% endcapture %}
     <h5>{{ full_footnote | markdownify }}</h5>
   </div>
 </footer>

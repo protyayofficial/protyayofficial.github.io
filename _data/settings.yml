@@ -24,10 +24,10 @@ publication:
       - 'all'
       - 'workshop'
       - 'conference'
-    topics:
-      - {name: 'All',            id: 'all',  description: ''}
-      - {name: 'Deep Learning',  id: 'dl',   description: ''}
-      - {name: 'Source Camera Forensics',            id: 'scf',  description: ''}
+    phases:
+      - {name: 'Publications from my PhD in CS at SUNY Buffalo',            id: 'phd',  description: ''}
+      - {name: 'Publications from my MTech in AI at IIT Ropar',  id: 'mtech',   description: ''}
+      - {name: 'Publications from my JRF at CVPR Lab, IIT Ropar',            id: 'jrf',  description: ''}
       # - {name: 'Machine Learning',          id: 'ml', description: ''}
     default_img: "/assets/publications/placeholder.png"
     tag_list: 
