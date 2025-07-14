@@ -27,7 +27,7 @@ publication:
     phases:
       - {name: 'Publications from my PhD in CS at SUNY Buffalo',            id: 'phd',  description: ''}
       - {name: 'Publications from my MTech in AI at IIT Ropar',  id: 'mtech',   description: ''}
-      - {name: 'Publications from my JRF at CVPR Lab, IIT Ropar',            id: 'jrf',  description: ''}
+      - {name: 'Publications from my time as a Junior Research Fellow at CVPR Lab, IIT Ropar',            id: 'jrf',  description: ''}
       # - {name: 'Machine Learning',          id: 'ml', description: ''}
     default_img: "/assets/publications/placeholder.png"
     tag_list: 
