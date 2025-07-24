@@ -1,314 +1,547 @@
----
-layout: page
----
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Protyay's Official Website</title>
-<meta name="og:title" content="Protyay's Official Website" />
-<meta
-  name="og:description"
-  content="The official website of Protyay, showcasing projects, research interests, and recent news."
-/>
-<meta
-  name="og:image"
-  content="{{site.url}}{{site.baseurl}}/assets/profile.jpg"
-/>
+    <!-- Primary Meta Tags -->
+    <title>Protyay's Official Website</title>
+    <meta name="title" content="Protyay's Official Website" />
+    <meta
+      name="description"
+      content="The official website of Protyay, showcasing projects, research interests, and recent news."
+    />
+    <meta
+      name="keywords"
+      content="Protyay, research, projects, academic, portfolio"
+    />
+    <meta name="author" content="Protyay" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{site.url}}{{site.baseurl}}/" />
 
-<meta name="og:url" content="{{site.url}}{{site.baseurl}}/" />
-<meta name="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Protyay's Official Website" />
-<meta
-  name="twitter:description"
-  content="The official website of Protyay, showcasing projects, research interests, and recent news."
-/>
-<meta
-  name="twitter:image"
-  content="{{site.url}}{{site.baseurl}}/assets/profile.jpg"
-/>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{site.url}}{{site.baseurl}}/" />
+    <meta property="og:title" content="Protyay's Official Website" />
+    <meta
+      property="og:description"
+      content="The official website of Protyay, showcasing projects, research interests, and recent news."
+    />
+    <meta
+      property="og:image"
+      content="{{site.url}}{{site.baseurl}}/assets/profile.jpg"
+    />
+    <meta property="og:site_name" content="Protyay's Official Website" />
+    <meta property="og:locale" content="en_US" />
 
-<meta
-  name="google-site-verification"
-  content="DkhVP5bwu7RiGX4NBoy7EUOuF7P4UdCR7owOc_X-ZsY"
-/>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{site.url}}{{site.baseurl}}/" />
+    <meta property="twitter:title" content="Protyay's Official Website" />
+    <meta
+      property="twitter:description"
+      content="The official website of Protyay, showcasing projects, research interests, and recent news."
+    />
+    <meta
+      property="twitter:image"
+      content="{{site.url}}{{site.baseurl}}/assets/profile.jpg"
+    />
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-/>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{site.url}}{{site.baseurl}}/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{site.url}}{{site.baseurl}}/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{site.url}}{{site.baseurl}}/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{site.url}}{{site.baseurl}}/favicon-16x16.png"
+    />
 
-<style>
-  /* Custom CSS for enhanced visual appeal */
-  .portfolio-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
+    <!-- Google Site Verification -->
+    <meta
+      name="google-site-verification"
+      content="DkhVP5bwu7RiGX4NBoy7EUOuF7P4UdCR7owOc_X-ZsY"
+    />
 
-  .profile-section {
-    /* Remove all background and styling */
-  }
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
-  .profile-photo {
-    position: relative;
-    max-width: 320px;
-    margin: 0 auto 1rem;
-  }
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+      media="all"
+    />
 
-  .profile-photo img {
-    border-radius: 10px;
-    border: 2px solid #e2e8f0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    height: auto;
-  }
+    <!-- Critical CSS inlined for performance -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      * {
+        box-sizing: border-box;
+      }
 
-  .profile-photo:hover img {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #1a1a1a;
+      }
 
-  .main-content {
-    padding: 1.5rem;
-    margin-left: 1.5rem;
-  }
+      .portfolio-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
 
-  .welcome-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
+      .columns {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -0.75rem;
+      }
 
-  .section-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 0.8rem;
-    margin-top: 1.5rem;
-    position: relative;
-    padding-left: 1rem;
-  }
+      .column {
+        padding: 0.75rem;
+        flex: 1;
+      }
 
-  .section-title::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 2px;
-  }
+      .is-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+      }
 
-  .news-section {
-    padding: 1rem;
-    margin-top: 1.5rem;
-  }
+      .is-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+      }
 
-  .news-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.8rem;
-    padding: 0.8rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-  }
+      @media screen and (max-width: 768px) {
+        .is-4,
+        .is-8 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
 
-  .news-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-left-color: #667eea;
-    transform: translateX(5px);
-  }
+      .profile-section {
+        /* Remove all background and styling */
+      }
 
-  .news-time {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
-    margin-right: 1rem;
-    min-width: 80px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
-  }
+      .profile-photo {
+        position: relative;
+        max-width: 320px;
+        margin: 0 auto 1rem;
+      }
 
-  .news-title {
-    flex: 1;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #ffffff;
-  }
+      .profile-photo img {
+        border-radius: 10px;
+        border: 2px solid #e2e8f0;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-  .news-title p {
-    margin: 0;
-  }
+      .profile-photo:hover img {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
 
-  .highlight-news .news-time {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    animation: pulse 2s infinite;
-  }
+      .main-content {
+        padding: 1.5rem;
+        margin-left: 1.5rem;
+      }
 
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
-    }
-    50% {
-      box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5);
-    }
-    100% {
-      box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
-    }
-  }
+      .welcome-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
 
-  .content-text {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-  }
+      .section-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.8rem;
+        margin-top: 1.5rem;
+        position: relative;
+        padding-left: 1rem;
+      }
 
-  .content-text p {
-    margin-bottom: 1rem;
-  }
+      .section-title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+      }
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .portfolio-container {
-      padding: 1rem;
-    }
+      .news-section {
+        padding: 1rem;
+        margin-top: 1.5rem;
+      }
 
-    .main-content {
-      margin-left: 0;
-      margin-top: 2rem;
-    }
+      .news-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        padding: 0.8rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+      }
 
-    .welcome-title {
-      font-size: 2rem;
-    }
+      .news-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-left-color: #667eea;
+        transform: translateX(5px);
+      }
 
-    .section-title {
-      font-size: 1.5rem;
-    }
+      .news-time {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        white-space: nowrap;
+        margin-right: 1rem;
+        min-width: 80px;
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+      }
 
-    .news-item {
-      flex-direction: column;
-      align-items: center;
-    }
+      .news-title {
+        flex: 1;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        color: #ffffff;
+      }
 
-    .news-time {
-      margin-right: 0;
-      margin-bottom: 0.5rem;
-    }
-  }
+      .news-title p {
+        margin: 0;
+      }
 
-  .side-column-wrapper {
-    max-width: 320px; /* same as .profile-photo */
-    margin: 0 auto;
-  }
-  .news-section {
-    width: 100%;
-    max-width: 320px; /* match profile image width */
-    margin: 1.5rem auto 0; /* center in column */
-    padding: 1rem;
-  }
+      .highlight-news .news-time {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        animation: pulse 2s infinite;
+      }
 
-  /* Animation for page load */
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
-  }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
+        }
+        50% {
+          box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5);
+        }
+        100% {
+          box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
+        }
+      }
 
-  .fade-in-delay {
-    opacity: 0;
-    animation: fadeIn 0.8s ease 0.3s forwards;
-  }
+      .content-text {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+      }
 
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-</style>
+      .content-text p {
+        margin-bottom: 1rem;
+      }
 
-<div class="portfolio-container">
-  <div class="columns is-desktop">
-    <!-- Left Column: Image + News -->
-    <div class="column is-4">
-      <div class="profile-section fade-in">
-        <div class="side-column-wrapper">
-          <!-- Profile Photo -->
-          <figure class="profile-photo">
-            <img
-              src="{{site.url}}{{site.baseurl}}/{{ site.data.meta.index.personal_photo }}"
-              alt="Profile Photo"
-            />
-          </figure>
+      .has-text-centered {
+        text-align: center;
+      }
 
-          <!-- Image credit if any -->
-          <div
-            class="has-text-centered"
-            style="opacity: 0.7; font-size: 0.9rem"
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .portfolio-container {
+          padding: 1rem;
+        }
+
+        .main-content {
+          margin-left: 0;
+          margin-top: 2rem;
+        }
+
+        .welcome-title {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .news-item {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .news-time {
+          margin-right: 0;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .side-column-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .news-section {
+        width: 100%;
+        max-width: 320px;
+        margin: 1.5rem auto 0;
+        padding: 1rem;
+      }
+
+      /* Animation for page load */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards;
+      }
+
+      .fade-in-delay {
+        opacity: 0;
+        animation: fadeIn 0.8s ease 0.3s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Performance optimizations */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Accessibility improvements */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Focus styles for accessibility */
+      *:focus {
+        outline: 2px solid #667eea;
+        outline-offset: 2px;
+      }
+
+      /* Skip link for screen readers */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #667eea;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 1000;
+      }
+
+      .skip-link:focus {
+        top: 6px;
+      }
+    </style>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Protyay",
+        "url": "{{site.url}}{{site.baseurl}}/",
+        "image": "{{site.url}}{{site.baseurl}}/assets/profile.jpg",
+        "description": "The official website of Protyay, showcasing projects, research interests, and recent news.",
+        "sameAs": []
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main container -->
+    <div class="portfolio-container">
+      <div class="columns is-desktop">
+        <!-- Left Column: Image + News -->
+        <div class="column is-4">
+          <aside
+            class="profile-section fade-in"
+            role="complementary"
+            aria-label="Profile and recent news"
           >
-            {{ site.data.meta.index.image_credit | markdownify }}
-          </div>
+            <div class="side-column-wrapper">
+              <!-- Profile Photo -->
+              <figure class="profile-photo">
+                <img
+                  src="{{site.url}}{{site.baseurl}}/{{ site.data.meta.index.personal_photo }}"
+                  alt="Profile photo of Protyay"
+                  loading="lazy"
+                  width="320"
+                  height="auto"
+                />
+              </figure>
 
-          <!-- Recent News -->
-          <div class="news-section fade-in-delay">
-            <h3 class="section-title">Recent News</h3>
-            {% for news in site.data.news limit:3 %}
-            <div
-              class="news-item {% if news.highlight != nil %}highlight-news{% endif %}"
-            >
-              <span class="news-time">{{ news.time }}</span>
-              <div class="news-title">{{ news.title | markdownify }}</div>
+              <!-- Image credit if any -->
+              <div
+                class="has-text-centered"
+                style="opacity: 0.7; font-size: 0.9rem"
+              >
+                {{ site.data.meta.index.image_credit | markdownify }}
+              </div>
+
+              <!-- Recent News -->
+              <section
+                class="news-section fade-in-delay"
+                aria-labelledby="recent-news-heading"
+              >
+                <h2 id="recent-news-heading" class="section-title">
+                  Recent News
+                </h2>
+                {% for news in site.data.news limit:3 %}
+                <article
+                  class="news-item {% if news.highlight != nil %}highlight-news{% endif %}"
+                >
+                  <time class="news-time" datetime="{{ news.time }}"
+                    >{{ news.time }}</time
+                  >
+                  <div class="news-title">{{ news.title | markdownify }}</div>
+                </article>
+                {% endfor %}
+              </section>
             </div>
-            {% endfor %}
-          </div>
+          </aside>
+        </div>
+
+        <!-- Right Column: About + Research Interests -->
+        <div class="column is-8">
+          <main
+            id="main-content"
+            class="main-content fade-in-delay"
+            role="main"
+          >
+            <header>
+              <h1 class="welcome-title">
+                {{ site.data.meta.index.welcome_message }}
+              </h1>
+            </header>
+
+            <section aria-labelledby="about-section">
+              <div class="content-text">
+                {{ site.data.meta.index.personal_description | markdownify }}
+              </div>
+            </section>
+
+            <section aria-labelledby="research-interests-heading">
+              <h2 id="research-interests-heading" class="section-title">
+                {{ site.data.meta.index.research_interest_message }}
+              </h2>
+              <div class="content-text">
+                {{ site.data.meta.index.research_interest | markdownify }}
+              </div>
+            </section>
+          </main>
         </div>
       </div>
     </div>
 
-    <!-- Right Column: About + Research Interests -->
-    <div class="column is-8">
-      <div class="main-content fade-in-delay">
-        <h1 class="welcome-title">
-          {{ site.data.meta.index.welcome_message }}
-        </h1>
-        <div class="content-text">
-          {{ site.data.meta.index.personal_description | markdownify }}
-        </div>
+    <!-- JavaScript -->
+    <script>
+      // Add smooth scrolling and intersection observer for animations
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
 
-        <h2 class="section-title">
-          {{ site.data.meta.index.research_interest_message }}
-        </h2>
-        <div class="content-text">
-          {{ site.data.meta.index.research_interest | markdownify }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        // Intersection Observer for lazy loading animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-<script>
-  // Add smooth scrolling and intersection observer for animations
-  document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scroll for any anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe fade-in elements
+        document.querySelectorAll(".fade-in, .fade-in-delay").forEach((el) => {
+          observer.observe(el);
         });
       });
-    });
-  });
-</script>
+
+      // Performance monitoring
+      window.addEventListener("load", function () {
+        // Optional: Add performance monitoring here
+        if ("performance" in window && "measure" in window.performance) {
+          window.performance.mark("page-loaded");
+        }
+      });
+
+      // Error handling for images
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll("img");
+        images.forEach((img) => {
+          img.addEventListener("error", function () {
+            console.warn("Failed to load image:", this.src);
+            // Optional: Add fallback image logic here
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
