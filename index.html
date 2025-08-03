@@ -212,7 +212,7 @@ layout: page
       }
 
       .highlight-news .news-time {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        background: linear-gradient(135deg, #939dfb 0%, #8657f5 100%);
         animation: pulse 2s infinite;
       }
 
@@ -346,9 +346,7 @@ layout: page
               >
                 <h2 id="recent-news" class="section-title">Recent News</h2>
                 {% for news in site.data.news limit:3 %}
-                <article
-                  class="news-item {% if news.highlight != nil %}highlight-news{% endif %}"
-                >
+                <article class="news-item highlight-news">
                   <time class="news-time" datetime="{{ news.time }}"
                     >{{ news.time }}</time
                   >
