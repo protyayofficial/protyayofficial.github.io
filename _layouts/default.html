@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   {% include head.html %}
 
-  <body>
-    <div class="section">
-      <div class="container">
-        {% if page.show_nav != false %} {% include nav.html %} {% endif %} {{
-        content }}
-      </div>
-    </div>
+  <body style="background: #0a0f1e; color: #e8eaf6; min-height: 100vh; display: flex; flex-direction: column;">
+    {% if page.show_nav != false %} {% include nav.html %} {% endif %}
+    
+    <main class="flex-1">
+      {{ content }}
+    </main>
 
     {% include footer.html %}
 
