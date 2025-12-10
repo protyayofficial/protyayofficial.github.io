@@ -167,15 +167,20 @@ layout: null
       }
 
       .about-content a {
-        color: #14b8a6;
+        color: #fbbf24;
+        font-weight: 600;
         text-decoration: none;
         border-bottom: 2px solid transparent;
         transition: all 0.3s;
       }
 
       .about-content a:hover {
-        border-bottom-color: #14b8a6;
-        color: #2dd4bf;
+        border-bottom-color: #fbbf24;
+        color: #fcd34d;
+      }
+
+      .about-content a[target="_blank"]::after {
+        content: " ↗";
       }
 
       .about-content strong {
@@ -464,22 +469,19 @@ layout: null
                     <div
                       class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-xl"
                     >
-                      <i class="fas fa-brain text-white text-xl"></i>
+                      <i
+                        class="fas fa-wand-magic-sparkles text-white text-xl"
+                      ></i>
                     </div>
                     <div class="flex-1">
                       <h3 class="text-2xl font-bold text-white font-serif mb-2">
-                        Efficient Diffusion Transformers
+                        Diffusion Models
                       </h3>
                       <div
                         class="w-16 h-1 bg-gradient-to-r from-teal-400 to-transparent rounded-full"
                       ></div>
                     </div>
                   </div>
-                  <p class="text-slate-400 leading-relaxed text-justified">
-                    Exploring novel architectures and training methodologies to
-                    improve efficiency and scalability in generative diffusion
-                    transformer models.
-                  </p>
                 </div>
 
                 <div
@@ -489,7 +491,7 @@ layout: null
                     <div
                       class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-xl"
                     >
-                      <i class="fas fa-users text-white text-xl"></i>
+                      <i class="fas fa-network-wired text-white text-xl"></i>
                     </div>
                     <div class="flex-1">
                       <h3 class="text-2xl font-bold text-white font-serif mb-2">
@@ -500,10 +502,46 @@ layout: null
                       ></div>
                     </div>
                   </div>
-                  <p class="text-slate-400 leading-relaxed text-justified">
-                    Investigating collaborative AI systems and multi-agent
-                    learning paradigms for complex problem-solving scenarios.
-                  </p>
+                </div>
+
+                <div
+                  class="research-card card-bg rounded-2xl p-8 border border-cyan-500/20"
+                >
+                  <div class="flex items-start gap-5 mb-5">
+                    <div
+                      class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-xl"
+                    >
+                      <i class="fas fa-eye text-white text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-2xl font-bold text-white font-serif mb-2">
+                        Vision Transformers
+                      </h3>
+                      <div
+                        class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-transparent rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="research-card card-bg rounded-2xl p-8 border border-purple-500/20"
+                >
+                  <div class="flex items-start gap-5 mb-5">
+                    <div
+                      class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-xl"
+                    >
+                      <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-2xl font-bold text-white font-serif mb-2">
+                        Machine Learning
+                      </h3>
+                      <div
+                        class="w-16 h-1 bg-gradient-to-r from-purple-400 to-transparent rounded-full"
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -639,6 +677,12 @@ layout: null
         el.style.opacity = "0";
         el.style.transform = "translateY(30px)";
         observer.observe(el);
+      });
+
+      // Make markdown links in about section open in new tabs
+      document.querySelectorAll(".about-content a").forEach((link) => {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
       });
     </script>
   </body>

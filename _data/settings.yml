@@ -5,7 +5,7 @@
 
 menu:
 - {name: 'About', file: ''}
-- {name: 'Research', file: 'research.html'}
+- {name: 'Publications', file: 'research.html'}
 # - {name: 'Beyond Research', file: 'beyondresearch.html'}
 
 social:

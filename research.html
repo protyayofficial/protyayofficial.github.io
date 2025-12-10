@@ -8,12 +8,18 @@ layout: null
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publications - Protyay Dey</title>
-    <meta name="description" content="Research publications by Protyay Dey in Computer Vision, Deep Learning, and AI Systems." />
+    <meta
+      name="description"
+      content="Research publications by Protyay Dey in Computer Vision, Deep Learning, and AI Systems."
+    />
 
     <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,8 +28,8 @@ layout: null
         theme: {
           extend: {
             fontFamily: {
-              sans: ['DM Sans', 'system-ui', 'sans-serif'],
-              serif: ['DM Serif Display', 'serif'],
+              sans: ["DM Sans", "system-ui", "sans-serif"],
+              serif: ["DM Serif Display", "serif"],
             },
           },
         },
@@ -31,16 +37,28 @@ layout: null
     </script>
 
     <!-- React.js -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
+
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       * {
@@ -50,7 +68,7 @@ layout: null
       }
 
       body {
-        font-family: 'DM Sans', system-ui, sans-serif;
+        font-family: "DM Sans", system-ui, sans-serif;
         background: #0a0f1e;
         color: #e8eaf6;
         overflow-x: hidden;
@@ -100,13 +118,18 @@ layout: null
       }
 
       .publication-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.15), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(20, 184, 166, 0.15),
+          transparent
+        );
         transition: left 0.8s;
       }
 
@@ -121,7 +144,11 @@ layout: null
       }
 
       .phase-header {
-        background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(234, 179, 8, 0.1));
+        background: linear-gradient(
+          135deg,
+          rgba(20, 184, 166, 0.1),
+          rgba(234, 179, 8, 0.1)
+        );
         backdrop-filter: blur(20px);
         border-left: 5px solid #14b8a6;
         position: relative;
@@ -129,13 +156,17 @@ layout: null
       }
 
       .phase-header::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
         width: 300px;
         height: 300px;
-        background: radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
+        background: radial-gradient(
+          circle,
+          rgba(20, 184, 166, 0.15) 0%,
+          transparent 70%
+        );
         transform: translate(100px, -100px);
       }
 
@@ -188,115 +219,135 @@ layout: null
       <main class="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <!-- Page Header -->
         <header class="mb-16 text-center">
-          <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 font-serif">Publications</h1>
+          <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 font-serif">
+            Publications
+          </h1>
           <div class="w-32 h-1.5 gradient-accent mx-auto rounded-full"></div>
-          <p class="text-slate-400 mt-6 text-lg max-w-2xl mx-auto text-justified">
-            Research contributions in Computer Vision, Deep Learning, and AI Systems
+          <p
+            class="text-slate-400 mt-6 text-lg max-w-2xl mx-auto text-justified"
+          >
+            Research contributions in Computer Vision, Deep Learning, and AI
+            Systems
           </p>
         </header>
 
         <!-- Publications by Phase -->
-        {% for phase in site.data.settings.publication.phases %}
-          {% assign phase_pubs = site.data.publications | where: "phase", phase.id %}
-          {% if phase_pubs and phase_pubs.size > 0 %}
-            <section class="mb-20">
-              <!-- Phase Header -->
-              <div class="phase-header card-bg rounded-2xl p-8 mb-12 shadow-2xl relative z-10">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white relative z-10">
-                  <span class="inline-block w-3 h-10 bg-gradient-to-b from-teal-400 to-amber-400 rounded-full mr-4 align-middle"></span>
-                  {{ phase.name }}
-                </h2>
+        {% for phase in site.data.settings.publication.phases %} {% assign
+        phase_pubs = site.data.publications | where: "phase", phase.id %} {% if
+        phase_pubs and phase_pubs.size > 0 %}
+        <section class="mb-20">
+          <!-- Phase Header -->
+          <div
+            class="phase-header card-bg rounded-2xl p-8 mb-12 shadow-2xl relative z-10"
+          >
+            <h2 class="text-3xl lg:text-4xl font-bold text-white relative z-10">
+              <span
+                class="inline-block w-3 h-10 bg-gradient-to-b from-teal-400 to-amber-400 rounded-full mr-4 align-middle"
+              ></span>
+              {{ phase.name }}
+            </h2>
+          </div>
+
+          <!-- Publications Grid -->
+          <div class="space-y-10">
+            {% for pub in phase_pubs %}
+            <article class="publication-card card-bg rounded-2xl p-8 lg:p-10">
+              <div
+                class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-10"
+              >
+                <!-- Publication Image -->
+                <div
+                  class="publication-image-wrapper w-full lg:w-auto h-72 lg:h-80 flex items-center justify-center"
+                >
+                  {% assign img_url = pub.img | default:
+                  site.data.settings.publication.default_img %}
+                  <img
+                    src="{{ img_url | absolute_url }}"
+                    alt="{{ pub.title }}"
+                    class="publication-image w-full h-full object-contain p-6"
+                    loading="lazy"
+                  />
+                </div>
+
+                <!-- Publication Details -->
+                <div class="space-y-5">
+                  <!-- Title -->
+                  <h3
+                    class="text-2xl lg:text-3xl font-bold text-white font-serif leading-tight text-justified"
+                  >
+                    {{ pub.title }}
+                  </h3>
+
+                  <!-- Authors -->
+                  <div
+                    class="text-slate-300 leading-relaxed text-base text-justified"
+                  >
+                    {% assign author_list = pub.author | split: "," %} {% for
+                    author in author_list %} {% assign name = author | strip %}
+                    {% if name == "Protyay Dey" %}
+                    <span class="text-teal-400 font-semibold"
+                      >{{ name }}<sup class="text-amber-400 text-sm ml-1"
+                        >⭐</sup
+                      ></span
+                    >
+                    {% else %}
+                    <span>{{ name }}</span>
+                    {% endif %} {% unless forloop.last %}<span
+                      class="text-slate-500"
+                      >, </span
+                    >{% endunless %} {% endfor %}
+                  </div>
+
+                  <!-- Venue -->
+                  <p
+                    class="text-slate-400 italic text-sm leading-relaxed text-justified"
+                  >
+                    {{ pub.venue | markdownify | strip_html }} {{ pub.publisher
+                    | markdownify | strip_html }}
+                  </p>
+
+                  <!-- Links -->
+                  <div class="flex flex-wrap gap-3 pt-2">
+                    {% for tag in site.data.settings.publication.tag_list %} {%
+                    if pub[tag.name] %}
+                    <a
+                      href="{{ pub[tag.name] }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="link-button inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900/70 text-teal-400 rounded-lg text-sm font-medium border border-slate-800 hover:bg-teal-500 hover:text-white hover:border-teal-500"
+                    >
+                      <i class="{{ tag.icon }} text-sm"></i>
+                      <span>
+                        {% case tag.name %} {% when "paper" %} {% if pub.paper
+                        contains "soon" %}Paper (soon){% else %}Paper{% endif %}
+                        {% when "code" %} {% if pub.code contains "soon" %}Code
+                        (soon){% elsif pub.code contains "data" or pub.code
+                        contains "dataset" %}Dataset{% else %}Code{% endif %} {%
+                        else %} {{ tag.name | capitalize }} {% endcase %}
+                      </span>
+                    </a>
+                    {% endif %} {% endfor %}
+                  </div>
+                </div>
               </div>
+            </article>
 
-              <!-- Publications Grid -->
-              <div class="space-y-10">
-                {% for pub in phase_pubs %}
-                  <article class="publication-card card-bg rounded-2xl p-8 lg:p-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-10">
-                      
-                      <!-- Publication Image -->
-                      <div class="publication-image-wrapper w-full lg:w-auto h-72 lg:h-80 flex items-center justify-center">
-                        {% assign img_url = pub.img | default: site.data.settings.publication.default_img %}
-                        <img
-                          src="{{ img_url | absolute_url }}"
-                          alt="{{ pub.title }}"
-                          class="publication-image w-full h-full object-contain p-6"
-                          loading="lazy"
-                        />
-                      </div>
-
-                      <!-- Publication Details -->
-                      <div class="space-y-5">
-                        <!-- Title -->
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white font-serif leading-tight text-justified">
-                          {{ pub.title }}
-                        </h3>
-
-                        <!-- Authors -->
-                        <div class="text-slate-300 leading-relaxed text-base text-justified">
-                          {% assign author_list = pub.author | split: "," %}
-                          {% for author in author_list %}
-                            {% assign name = author | strip %}
-                            {% if name == "Protyay Dey" %}
-                              <span class="text-teal-400 font-semibold">{{ name }}<sup class="text-amber-400 text-sm ml-1">⭐</sup></span>
-                            {% else %}
-                              <span>{{ name }}</span>
-                            {% endif %}
-                            {% unless forloop.last %}<span class="text-slate-500">, </span>{% endunless %}
-                          {% endfor %}
-                        </div>
-
-                        <!-- Venue -->
-                        <p class="text-slate-400 italic text-sm leading-relaxed text-justified">
-                          {{ pub.venue | markdownify | strip_html }}
-                          {{ pub.publisher | markdownify | strip_html }}
-                        </p>
-
-                        <!-- Links -->
-                        <div class="flex flex-wrap gap-3 pt-2">
-                          {% for tag in site.data.settings.publication.tag_list %}
-                            {% if pub[tag.name] %}
-                              <a
-                                href="{{ pub[tag.name] }}"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="link-button inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900/70 text-teal-400 rounded-lg text-sm font-medium border border-slate-800 hover:bg-teal-500 hover:text-white hover:border-teal-500"
-                              >
-                                <i class="{{ tag.icon }} text-sm"></i>
-                                <span>
-                                  {% case tag.name %}
-                                    {% when "paper" %}
-                                      {% if pub.paper contains "soon" %}Paper (soon){% else %}Paper{% endif %}
-                                    {% when "code" %}
-                                      {% if pub.code contains "soon" %}Code (soon){% elsif pub.code contains "data" or pub.code contains "dataset" %}Dataset{% else %}Code{% endif %}
-                                    {% else %}
-                                      {{ tag.name | capitalize }}
-                                  {% endcase %}
-                                </span>
-                              </a>
-                            {% endif %}
-                          {% endfor %}
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  {% unless forloop.last %}
-                    <div class="h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent my-10"></div>
-                  {% endunless %}
-                {% endfor %}
-              </div>
-            </section>
-          {% endif %}
-        {% endfor %}
+            {% unless forloop.last %}
+            <div
+              class="h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent my-10"
+            ></div>
+            {% endunless %} {% endfor %}
+          </div>
+        </section>
+        {% endif %} {% endfor %}
 
         <!-- Empty State -->
-        {% assign all_pubs = site.data.publications | size %}
-        {% if all_pubs == 0 %}
-          <div class="text-center py-20">
-            <i class="fas fa-file-alt text-6xl text-slate-700 mb-6"></i>
-            <p class="text-slate-400 text-lg">No publications available yet.</p>
-          </div>
+        {% assign all_pubs = site.data.publications | size %} {% if all_pubs ==
+        0 %}
+        <div class="text-center py-20">
+          <i class="fas fa-file-alt text-6xl text-slate-700 mb-6"></i>
+          <p class="text-slate-400 text-lg">No publications available yet.</p>
+        </div>
         {% endif %}
       </main>
 
@@ -306,11 +357,19 @@ layout: null
 
     <!-- Three.js Script -->
     <script>
-      if (typeof THREE !== 'undefined') {
-        const container = document.getElementById('canvas-container');
+      if (typeof THREE !== "undefined") {
+        const container = document.getElementById("canvas-container");
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        const camera = new THREE.PerspectiveCamera(
+          75,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000
+        );
+        const renderer = new THREE.WebGLRenderer({
+          alpha: true,
+          antialias: true,
+        });
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
 
@@ -322,7 +381,10 @@ layout: null
           positions[i] = (Math.random() - 0.5) * 2000;
         }
 
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute(
+          "position",
+          new THREE.BufferAttribute(positions, 3)
+        );
         const material = new THREE.PointsMaterial({
           color: 0x14b8a6,
           size: 2,
@@ -343,7 +405,7 @@ layout: null
 
         animate();
 
-        window.addEventListener('resize', () => {
+        window.addEventListener("resize", () => {
           camera.aspect = window.innerWidth / window.innerHeight;
           camera.updateProjectionMatrix();
           renderer.setSize(window.innerWidth, window.innerHeight);

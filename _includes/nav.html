@@ -14,12 +14,31 @@
   </style>
   <div class="max-w-7xl mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
-      <a href="{{ site.url }}{{ site.baseurl }}" class="text-2xl font-bold gradient-text tracking-tight">
+      <a
+        href="{{ site.url }}{{ site.baseurl }}"
+        class="text-2xl font-bold gradient-text tracking-tight"
+      >
         {{ site.title }}
       </a>
       <div class="hidden md:flex items-center space-x-8">
         {% for item in site.data.settings.menu %}
-        <a href="{{ item.file | absolute_url }}" class="text-slate-300 hover:text-teal-400 transition-colors font-medium text-sm uppercase tracking-wider">
+        <a
+          href="{{ item.file | absolute_url }}"
+          class="text-slate-300 hover:text-teal-400 transition-colors font-medium text-sm uppercase tracking-wider"
+          {%
+          if
+          item.file
+          and
+          item.name
+          !="About"
+          and
+          item.name
+          !="Publications"
+          %}target="_blank"
+          {%
+          endif
+          %}
+        >
           {{ item.name }}
         </a>
         {% endfor %}
@@ -30,7 +49,23 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-2">
       {% for item in site.data.settings.menu %}
-      <a href="{{ item.file | absolute_url }}" class="block text-slate-300 hover:text-teal-400 transition-colors text-sm uppercase tracking-wider">
+      <a
+        href="{{ item.file | absolute_url }}"
+        class="block text-slate-300 hover:text-teal-400 transition-colors text-sm uppercase tracking-wider"
+        {%
+        if
+        item.file
+        and
+        item.name
+        !="About"
+        and
+        item.name
+        !="Publications"
+        %}target="_blank"
+        {%
+        endif
+        %}
+      >
         {{ item.name }}
       </a>
       {% endfor %}
@@ -39,7 +74,7 @@
 </nav>
 <script>
   function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
   }
 </script>

@@ -6,12 +6,12 @@ index:
   personal_photo: "/assets/profile.jpg"
   news_highlight_color: 'is-info'
   personal_description: |
-    I am a PhD student in the Department of Computer Science and Engineering at the University at Buffalo (SUNY), working in the Computer Vision and Machine Learning (CVML) Lab under the supervision of [Dr. Vishnu Lokhande](https://vlokhande-ub.github.io). I currently serve as a Teaching Assistant for CSE573 (Computer Vision) at UB under [Prof. Junsong Yuan](https://scholar.google.com/citations?user=3w4B0JwAAAAJ).
+    I am a PhD student in the Department of Computer Science and Engineering at the University at Buffalo (SUNY), working in the Computer Vision and Machine Learning (CVML) Lab under the supervision of [Dr. Vishnu Lokhande](https://vlokhande-ub.github.io). I currently serve as a Teaching Assistant for CSE573 (Computer Vision) at UB under [Prof. Junsong Yuan](https://cse.buffalo.edu/~jsyuan/).
 
-    Prior to this, I completed my Master's in Artificial Intelligence from the Indian Institute of Technology Ropar, where my thesis on Source Camera Forensics was advised by [Dr. Puneet Goyal](https://sites.google.com/view/goyalpuneet). I was privileged to collaborate with [Prof. Gaurav Sharma](https://hajim.rochester.edu/ece/sites/gsharma/) from the University of Rochester during this time.
+    Prior to this, I completed my Master’s in Artificial Intelligence at the Indian Institute of Technology Ropar, where my thesis on source camera forensics was advised by [Dr. Puneet Goyal](https://sites.google.com/view/goyalpuneet). During this time, I was also privileged to collaborate with [Prof. Gaurav Sharma](https://hajim.rochester.edu/ece/sites/gsharma/) from the University of Rochester. 
 
-    Before starting my PhD, I worked as a Junior Research Fellow at the CVPR Lab, IIT Ropar, under the guidance of [Dr. Santosh Kumar Vipparthi](https://skvipparthi.github.io), focusing on Federated Learning in Aerial Scene Classification.
-
+    After my master’s, I continued working in source camera forensics as a Research Intern in the IPSA Lab at IIT Ropar under the supervision of [Dr. Puneet Goyal](https://sites.google.com/view/goyalpuneet). Later, I joined the CVPR Lab at IIT Ropar as a Junior Research Fellow, working with [Dr. Santosh Kumar Vipparthi](https://skvipparthi.github.io) on federated learning for aerial scene classification.
+   
     I completed my B.Tech from University of Engineering and Management Jaipur, where my undergraduate thesis on Driver's Drowsiness Detection was advised by [Mr. Dipta Mukherjee](https://www.linkedin.com/in/dipta-mukherjee-21564a21/).
 
   research_interest: |
