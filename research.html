@@ -35,6 +35,27 @@ layout: null
         },
       };
     </script>
+    <script>
+      // Small tilt interaction for cards (pointer-based)
+      (function () {
+        const cards = document.querySelectorAll(".publication-card");
+        function onMove(e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          const rx = (y / rect.height) * 6;
+          const ry = (x / rect.width) * -6;
+          this.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.01)`;
+        }
+        function onLeave() {
+          this.style.transform = "";
+        }
+        cards.forEach((c) => {
+          c.addEventListener("pointermove", onMove);
+          c.addEventListener("pointerleave", onLeave);
+        });
+      })();
+    </script>
 
     <!-- React.js -->
     <script
@@ -61,17 +82,28 @@ layout: null
     />
 
     <style>
+      :root {
+        --bg-0: #071026;
+        --bg-1: #071226;
+        --muted: rgba(255, 255, 255, 0.7);
+        --glass: rgba(255, 255, 255, 0.03);
+        --accent-start: #14b8a6;
+        --accent-end: #eab308;
+      }
+
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
 
       body {
         font-family: "DM Sans", system-ui, sans-serif;
-        background: #0a0f1e;
-        color: #e8eaf6;
+        background: linear-gradient(180deg, var(--bg-0), var(--bg-1));
+        color: #e6eef8;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
       #canvas-container {
@@ -93,9 +125,13 @@ layout: null
       }
 
       .card-bg {
-        background: rgba(15, 23, 42, 0.6);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(20, 184, 166, 0.2);
+        background: linear-gradient(
+          180deg,
+          var(--glass),
+          rgba(255, 255, 255, 0.01)
+        );
+        backdrop-filter: blur(6px) saturate(1.1);
+        border: 1px solid rgba(255, 255, 255, 0.04);
       }
 
       .nav-glass {
@@ -112,9 +148,13 @@ layout: null
       }
 
       .publication-card {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.28s cubic-bezier(0.2, 0, 0.2, 1),
+          box-shadow 0.28s;
         position: relative;
         overflow: hidden;
+        padding: 0.6rem;
+        border-radius: 12px;
+        border-left: 4px solid transparent;
       }
 
       .publication-card::before {
@@ -138,9 +178,9 @@ layout: null
       }
 
       .publication-card:hover {
-        border-color: rgba(20, 184, 166, 0.6);
-        transform: translateY(-6px);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(2, 6, 23, 0.55);
+        border-left-color: var(--accent-start);
       }
 
       .phase-header {
@@ -170,20 +210,37 @@ layout: null
         transform: translate(100px, -100px);
       }
 
-      .publication-image-wrapper {
-        position: relative;
-        overflow: hidden;
-        border-radius: 1rem;
-        background: rgba(10, 15, 30, 0.8);
-        border: 1px solid rgba(20, 184, 166, 0.2);
+      .publication-meta {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
       }
 
-      .publication-image {
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      .pub-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: linear-gradient(
+          135deg,
+          var(--accent-start),
+          var(--accent-end)
+        );
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #06202a;
+        font-weight: 700;
+        flex-shrink: 0;
       }
 
-      .publication-card:hover .publication-image {
-        transform: scale(1.08);
+      .pub-title {
+        font-weight: 600;
+      }
+
+      .phase-header {
+        border-left: 0;
+        border-radius: 14px;
+        padding: 20px;
       }
 
       .gradient-accent {
@@ -191,12 +248,27 @@ layout: null
       }
 
       .link-button {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.14s, box-shadow 0.14s;
+      }
+      .link-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(2, 6, 23, 0.45);
       }
 
-      .link-button:hover {
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 10px 25px rgba(20, 184, 166, 0.4);
+      .pub-meta-small {
+        font-size: 0.86rem;
+        color: rgba(230, 238, 248, 0.8);
+      }
+
+      /* responsive tighter spacing */
+      @media (min-width: 1024px) {
+        .publication-card {
+          padding: 0.9rem;
+        }
+        .pub-icon {
+          width: 52px;
+          height: 52px;
+        }
       }
 
       .text-justified {
@@ -249,106 +321,78 @@ layout: null
           </div>
 
           <!-- Publications Grid -->
-          <div class="space-y-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {% for pub in phase_pubs %}
-            <article class="publication-card card-bg rounded-2xl p-8 lg:p-10">
-              <div
-                class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-10"
-              >
-                <!-- Publication Image -->
-                <div
-                  class="publication-image-wrapper w-full lg:w-auto h-72 lg:h-80 flex items-center justify-center"
-                >
-                  {% assign img_url = pub.img | default:
-                  site.data.settings.publication.default_img %}
-                  <img
-                    src="{{ img_url | absolute_url }}"
-                    alt="{{ pub.title }}"
-                    class="publication-image w-full h-full object-contain p-6"
-                    loading="lazy"
-                  />
+            <article class="publication-card card-bg">
+              <div class="flex gap-4 items-start">
+                <div class="pub-icon">
+                  <i class="fas fa-file-lines" style="font-size: 16px"></i>
                 </div>
 
-                <!-- Publication Details -->
-                <div class="space-y-5">
-                  <!-- Title -->
-                  <h3
-                    class="text-2xl lg:text-3xl font-bold text-white font-serif leading-tight text-justified"
-                  >
-                    {{ pub.title }}
-                  </h3>
+                <div style="flex: 1">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <div class="pub-title text-white pub-title">
+                        {{ pub.title }}
+                      </div>
+                      <div class="pub-meta-small mt-1">
+                        {% assign author_list = pub.author | split: "," %} {%
+                        for author in author_list %} {% assign name = author |
+                        strip %} {% if name == "Protyay Dey" %}
+                        <span class="text-teal-300 font-medium"
+                          >{{ name }}</span
+                        >
+                        {% else %}
+                        <span>{{ name }}</span>
+                        {% endif %}{% unless forloop.last %}, {% endunless %} {%
+                        endfor %}
+                      </div>
+                      <div class="pub-meta-small mt-1">
+                        {{ pub.venue | markdownify | strip_html }}
+                      </div>
+                    </div>
 
-                  <!-- Authors -->
-                  <div
-                    class="text-slate-300 leading-relaxed text-base text-justified"
-                  >
-                    {% assign author_list = pub.author | split: "," %} {% for
-                    author in author_list %} {% assign name = author | strip %}
-                    {% if name == "Protyay Dey" %}
-                    <span class="text-teal-400 font-semibold"
-                      >{{ name }}<sup class="text-amber-400 text-sm ml-1"
-                        >⭐</sup
-                      ></span
-                    >
-                    {% else %}
-                    <span>{{ name }}</span>
-                    {% endif %} {% unless forloop.last %}<span
-                      class="text-slate-500"
-                      >, </span
-                    >{% endunless %} {% endfor %}
+                    <div class="text-right">
+                      <span
+                        class="px-2 py-0.5 rounded-md text-xs font-semibold gradient-accent text-black"
+                        >{{ pub.type | capitalize }}</span
+                      >
+                    </div>
                   </div>
 
-                  <!-- Venue -->
-                  <p
-                    class="text-slate-400 italic text-sm leading-relaxed text-justified"
-                  >
-                    {{ pub.venue | markdownify | strip_html }} {{ pub.publisher
-                    | markdownify | strip_html }}
-                  </p>
+                  <div class="mt-3 pub-meta-small">
+                    {% if pub.abstract %}{{ pub.abstract | markdownify |
+                    strip_html | truncate:200 }}{% endif %}
+                  </div>
 
-                  <!-- Links -->
-                  <div class="flex flex-wrap gap-3 pt-2">
+                  <div class="flex flex-wrap gap-3 mt-3">
                     {% for tag in site.data.settings.publication.tag_list %} {%
                     if pub[tag.name] %}
                     <a
                       href="{{ pub[tag.name] }}"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="link-button inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900/70 text-teal-400 rounded-lg text-sm font-medium border border-slate-800 hover:bg-teal-500 hover:text-white hover:border-teal-500"
+                      class="link-button inline-flex items-center gap-2 px-3 py-1.5 bg-transparent text-teal-300 rounded-md text-sm font-medium border border-white/6 hover:bg-gradient-to-r hover:from-teal-500 hover:to-amber-400 hover:text-black"
                     >
                       <i class="{{ tag.icon }} text-sm"></i>
-                      <span>
-                        {% case tag.name %} {% when "paper" %} {% if pub.paper
-                        contains "soon" %}Paper (soon){% else %}Paper{% endif %}
-                        {% when "code" %} {% if pub.code contains "soon" %}Code
+                      <span
+                        >{% case tag.name %}{% when "paper" %}{% if pub.paper
+                        contains "soon" %}Paper (soon){% else %}Paper{% endif
+                        %}{% when "code" %}{% if pub.code contains "soon" %}Code
                         (soon){% elsif pub.code contains "data" or pub.code
-                        contains "dataset" %}Dataset{% else %}Code{% endif %} {%
-                        else %} {{ tag.name | capitalize }} {% endcase %}
-                      </span>
+                        contains "dataset" %}Dataset{% else %}Code{% endif %}{%
+                        else %}{{ tag.name | capitalize }}{% endcase %}</span
+                      >
                     </a>
                     {% endif %} {% endfor %}
                   </div>
                 </div>
               </div>
             </article>
-
-            {% unless forloop.last %}
-            <div
-              class="h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent my-10"
-            ></div>
-            {% endunless %} {% endfor %}
+            {% endfor %}
           </div>
         </section>
         {% endif %} {% endfor %}
-
-        <!-- Empty State -->
-        {% assign all_pubs = site.data.publications | size %} {% if all_pubs ==
-        0 %}
-        <div class="text-center py-20">
-          <i class="fas fa-file-alt text-6xl text-slate-700 mb-6"></i>
-          <p class="text-slate-400 text-lg">No publications available yet.</p>
-        </div>
-        {% endif %}
       </main>
 
       <!-- Footer -->
