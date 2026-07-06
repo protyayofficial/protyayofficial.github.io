@@ -10,7 +10,7 @@ layout: null
     <title>Portfolio - Protyay Dey</title>
     <meta
       name="description"
-      content="PhD Student in Computer Science at University at Buffalo. Research in Computer Vision, Deep Learning, Efficient Diffusion Transformers, and Multi-Agent Systems."
+      content="PhD Student in Computer Science at University at Buffalo. Research in Small Language Models, Multi-Agent Systems, Generative AI, and Diffusion Models."
     />
 
     <!-- Premium Fonts -->
@@ -324,11 +324,11 @@ layout: null
           <!-- Left Sidebar -->
           <aside class="space-y-8 lg:sticky lg:top-24 self-start">
             <!-- Profile Image -->
-            <div class="profile-image">
+            <div class="profile-image max-w-sm mx-auto lg:max-w-none">
               <img
                 src="{{site.url}}{{site.baseurl}}/{{ site.data.meta.index.personal_photo }}"
                 alt="Protyay Dey"
-                class="w-full rounded-3xl shadow-2xl border-2 border-teal-500/30"
+                class="w-full aspect-[4/5] object-cover object-center rounded-3xl shadow-2xl border-2 border-teal-500/30"
                 loading="eager"
               />
             </div>
@@ -345,6 +345,17 @@ layout: null
                 >
               </p>
             </div>
+
+            <!-- CV -->
+            <a
+              href="{{ '/assets/resume/Protyay_Resume_2026.pdf' | relative_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-button flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-amber-400 text-slate-950 font-bold shadow-lg"
+            >
+              <i class="fas fa-file-pdf text-lg"></i>
+              <span>View CV</span>
+            </a>
 
             <!-- Social Links -->
             <div class="space-y-3">
@@ -463,83 +474,97 @@ layout: null
               <!-- Research Cards - Enhanced -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div
-                  class="research-card card-bg rounded-2xl p-8 border border-teal-500/20"
+                  class="research-card card-bg rounded-2xl p-5 sm:p-6 border border-teal-500/20"
                 >
-                  <div class="flex items-start gap-5 mb-5">
+                  <div class="flex items-start gap-3 sm:gap-4">
                     <div
-                      class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-xl"
+                      class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-xl"
                     >
                       <i
-                        class="fas fa-wand-magic-sparkles text-white text-xl"
+                        class="fas fa-brain text-white text-xl"
                       ></i>
                     </div>
-                    <div class="flex-1">
-                      <h3 class="text-2xl font-bold text-white font-serif mb-2">
-                        Diffusion Models
+                    <div class="flex-1 min-w-0">
+                      <h3 class="text-[15px] sm:text-lg xl:text-xl whitespace-nowrap font-bold text-white font-serif mb-2">
+                        Small Language Models
                       </h3>
                       <div
                         class="w-16 h-1 bg-gradient-to-r from-teal-400 to-transparent rounded-full"
                       ></div>
+                      <p class="text-xs lg:text-sm text-slate-400 mt-3 leading-relaxed">
+                        Efficient models for language reasoning
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div
-                  class="research-card card-bg rounded-2xl p-8 border border-amber-500/20"
+                  class="research-card card-bg rounded-2xl p-5 sm:p-6 border border-amber-500/20"
                 >
-                  <div class="flex items-start gap-5 mb-5">
+                  <div class="flex items-start gap-3 sm:gap-4">
                     <div
-                      class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-xl"
+                      class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-xl"
                     >
                       <i class="fas fa-network-wired text-white text-xl"></i>
                     </div>
-                    <div class="flex-1">
-                      <h3 class="text-2xl font-bold text-white font-serif mb-2">
+                    <div class="flex-1 min-w-0">
+                      <h3 class="text-[15px] sm:text-lg xl:text-xl whitespace-nowrap font-bold text-white font-serif mb-2">
                         Multi-Agent Systems
                       </h3>
                       <div
                         class="w-16 h-1 bg-gradient-to-r from-amber-400 to-transparent rounded-full"
                       ></div>
+                      <p class="text-xs lg:text-sm text-slate-400 mt-3 leading-relaxed">
+                        Collaborative agents for complex reasoning
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div
-                  class="research-card card-bg rounded-2xl p-8 border border-cyan-500/20"
+                  class="research-card card-bg rounded-2xl p-5 sm:p-6 border border-cyan-500/20"
                 >
-                  <div class="flex items-start gap-5 mb-5">
+                  <div class="flex items-start gap-3 sm:gap-4">
                     <div
-                      class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-xl"
+                      class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-xl"
                     >
-                      <i class="fas fa-eye text-white text-xl"></i>
+                      <i
+                        class="fas fa-wand-magic-sparkles text-white text-xl"
+                      ></i>
                     </div>
-                    <div class="flex-1">
-                      <h3 class="text-2xl font-bold text-white font-serif mb-2">
-                        Vision Transformers
+                    <div class="flex-1 min-w-0">
+                      <h3 class="text-[15px] sm:text-lg xl:text-xl whitespace-nowrap font-bold text-white font-serif mb-2">
+                        Generative AI
                       </h3>
                       <div
                         class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-transparent rounded-full"
                       ></div>
+                      <p class="text-xs lg:text-sm text-slate-400 mt-3 leading-relaxed">
+                        Reliable systems for generative modeling
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div
-                  class="research-card card-bg rounded-2xl p-8 border border-purple-500/20"
+                  class="research-card card-bg rounded-2xl p-5 sm:p-6 border border-purple-500/20"
                 >
-                  <div class="flex items-start gap-5 mb-5">
+                  <div class="flex items-start gap-3 sm:gap-4">
                     <div
-                      class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-xl"
+                      class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-xl"
                     >
-                      <i class="fas fa-graduation-cap text-white text-xl"></i>
+                      <i class="fas fa-atom text-white text-xl"></i>
                     </div>
-                    <div class="flex-1">
-                      <h3 class="text-2xl font-bold text-white font-serif mb-2">
-                        Machine Learning
+                    <div class="flex-1 min-w-0">
+                      <h3 class="text-[15px] sm:text-lg xl:text-xl whitespace-nowrap font-bold text-white font-serif mb-2">
+                        Diffusion Models
                       </h3>
                       <div
                         class="w-16 h-1 bg-gradient-to-r from-purple-400 to-transparent rounded-full"
                       ></div>
+                      <p class="text-xs lg:text-sm text-slate-400 mt-3 leading-relaxed">
+                        Controllable, structure-aware generation
+                      </p>
                     </div>
                   </div>
                 </div>
