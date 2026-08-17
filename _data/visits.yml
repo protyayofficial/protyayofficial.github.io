@@ -6,10 +6,10 @@
   icon: fa-people-group
 
 - time: May 2026
-  type: Invited Talk
-  title: MAGNET at the Center for Biomedical Imaging
-  place: University at Buffalo
-  description: Presented MAGNET at the Center for Biomedical Imaging's MR Imaging Seminar.
+  type: MRI Seminar
+  title: MAGNET at the MRI Seminar
+  place: Center for Biomedical Imaging, University at Buffalo
+  description: Presented MAGNET and our work on graph diffusion for brain connectome generation.
   icon: fa-microphone-lines
 
 - time: Apr 2026
