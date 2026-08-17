@@ -1,0 +1,25 @@
+---
+layout: content
+title: Visits & Talks
+description: Academic visits, talks, and workshops attended by Protyay Dey.
+intro: A record of research visits, presentations, and workshops beyond my home lab.
+---
+
+<div class="grid grid-cols-1 gap-7">
+  {% for item in site.data.visits %}
+  <article class="entry-card card-bg rounded-2xl p-6 md:p-8">
+    <div class="flex flex-col sm:flex-row gap-5">
+      <div class="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center text-slate-950 flex-shrink-0 shadow-lg"><i class="fas {{ item.icon }}"></i></div>
+      <div class="flex-1">
+        <div class="flex flex-wrap items-center gap-3 mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-teal-400 bg-teal-400/10 px-3 py-1 rounded-full">{{ item.type }}</span>
+          <span class="text-xs font-bold text-amber-400">{{ item.time }}</span>
+        </div>
+        <h2 class="text-xl md:text-2xl font-bold text-white mb-2">{{ item.title }}</h2>
+        <p class="text-slate-500 text-sm mb-4"><i class="fas fa-location-dot text-teal-500 mr-2"></i>{{ item.place }}</p>
+        <p class="text-slate-300 leading-relaxed">{{ item.description }}</p>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>
