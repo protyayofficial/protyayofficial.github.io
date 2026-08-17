@@ -1,9 +1,9 @@
-- time: Apr 2026
-  type: Visit & Lightning Talk
-  title: NYC Vision Day 2026
-  place: New York University, New York
-  description: Visited NYU for NYC Vision Day and presented a lightning talk on MAGNET, our manifold-aware graph diffusion model for brain connectome generation.
-  icon: fa-bolt
+- time: Aug 2026
+  type: Summer Workshop
+  title: Diffusion Generative Modeling
+  place: Simons Institute for the Theory of Computing, UC Berkeley
+  description: Attended the summer workshop on Diffusion Generative Modeling at the Simons Institute, with talks and discussions on recent advances in diffusion-based generative models.
+  icon: fa-people-group
 
 - time: May 2026
   type: Invited Talk
@@ -12,9 +12,9 @@
   description: Presented MAGNET at the Center for Biomedical Imaging's MR Imaging Seminar.
   icon: fa-microphone-lines
 
-- time: Aug 2026
-  type: Summer Workshop
-  title: Diffusion Generative Modeling
-  place: Simons Institute for the Theory of Computing, UC Berkeley
-  description: Attended the summer workshop on Diffusion Generative Modeling at the Simons Institute, with talks and discussions on recent advances in diffusion-based generative models.
-  icon: fa-people-group
+- time: Apr 2026
+  type: Visit & Lightning Talk
+  title: NYC Vision Day 2026
+  place: New York University, New York
+  description: Visited NYU for NYC Vision Day and presented a lightning talk on MAGNET, our manifold-aware graph diffusion model for brain connectome generation.
+  icon: fa-bolt
