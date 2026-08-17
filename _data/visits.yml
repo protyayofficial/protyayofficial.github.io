@@ -1,20 +1,20 @@
 - time: Aug 2026
   type: Summer Workshop
-  title: Diffusion Generative Modeling
+  title: Summer Workshop on Diffusion Generative Modeling
   place: Simons Institute for the Theory of Computing, UC Berkeley
-  description: Attended the summer workshop on Diffusion Generative Modeling at the Simons Institute, with talks and discussions on recent advances in diffusion-based generative models.
+  description: Attended a focused workshop on the theory and practice of diffusion models, with talks and discussions spanning recent advances in generative modeling.
   icon: fa-people-group
 
 - time: May 2026
   type: MRI Seminar
-  title: MAGNET at the MRI Seminar
+  title: MRI Seminar at the Center for Biomedical Imaging
   place: Center for Biomedical Imaging, University at Buffalo
-  description: Presented MAGNET and our work on graph diffusion for brain connectome generation.
+  description: Presented MAGNET, our manifold-aware graph diffusion model for generating brain connectomes, and discussed its use across multiple imaging cohorts.
   icon: fa-microphone-lines
 
 - time: Apr 2026
   type: Visit & Lightning Talk
-  title: NYC Vision Day 2026
+  title: MAGNET at NYC Vision Day 2026
   place: New York University, New York
-  description: Visited NYU for NYC Vision Day and presented a lightning talk on MAGNET, our manifold-aware graph diffusion model for brain connectome generation.
+  description: Gave a lightning talk on MAGNET, our manifold-aware graph diffusion framework for generating realistic brain connectomes across multiple neuroimaging cohorts.
   icon: fa-bolt

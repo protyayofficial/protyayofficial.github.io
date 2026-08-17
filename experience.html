@@ -2,33 +2,124 @@
 layout: content
 title: Experience
 description: Research and industry experience of Protyay Dey.
-intro: Research and industry roles that shaped my work in computer vision, deep learning, and federated learning.
+intro: Research and industry roles across computer vision, deep learning, and federated learning.
+compact: true
 ---
 
-<div class="relative">
-  <div class="absolute left-6 md:left-8 top-4 bottom-4 w-px bg-gradient-to-b from-teal-400 via-teal-500/40 to-amber-400/60"></div>
-  <div class="space-y-8">
-    {% for item in site.data.experience %}
-    <article class="entry-card card-bg rounded-2xl p-6 md:p-8 ml-14 md:ml-20 relative">
-      <div class="absolute -left-[3.15rem] md:-left-[4.15rem] top-8 w-10 h-10 rounded-xl gradient-accent flex items-center justify-center text-slate-950 shadow-lg">
-        <i class="fas fa-briefcase"></i>
-      </div>
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+<section class="experience-list" aria-label="Professional experience">
+  {% for item in site.data.experience %}
+  <article class="experience-row">
+    <div class="experience-meta">
+      <p class="experience-date">{{ item.time }}</p>
+      <p class="experience-location"><i class="fas fa-location-dot" aria-hidden="true"></i>{{ item.location }}</p>
+    </div>
+
+    <div class="experience-body">
+      <div class="experience-heading">
         <div>
-          <p class="text-teal-400 text-sm font-bold mb-2">{{ item.role }}</p>
-          <h2 class="text-xl md:text-2xl font-bold text-white">{% if item.short_name %}{{ item.short_name }}{% else %}{{ item.company }}{% endif %}</h2>
-          {% if item.short_name %}<p class="text-slate-500 text-sm mt-1">{{ item.company }}</p>{% endif %}
+          <h2>{% if item.short_name %}{{ item.short_name }}{% else %}{{ item.company }}{% endif %}</h2>
+          {% if item.short_name %}<p class="experience-company">{{ item.company }}</p>{% endif %}
         </div>
-        <div class="md:text-right flex-shrink-0">
-          <p class="text-amber-400 text-sm font-bold">{{ item.time }}</p>
-          <p class="text-slate-500 text-sm mt-1">{{ item.location }}</p>
-        </div>
+        <p class="experience-role">{{ item.role }}</p>
       </div>
-      <p class="text-slate-300 leading-relaxed">{{ item.summary }}</p>
-      <ul class="mt-4 space-y-2 text-slate-400 text-sm leading-relaxed">
-        {% for detail in item.details %}<li class="flex gap-3"><span class="text-teal-400 mt-1">•</span><span>{{ detail }}</span></li>{% endfor %}
-      </ul>
-    </article>
-    {% endfor %}
-  </div>
-</div>
+
+      <p class="experience-summary">{{ item.summary }}</p>
+
+      <p class="experience-impact">{{ item.impact }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<style>
+  .experience-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .4rem;
+  }
+
+  .experience-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .3rem;
+    min-width: 0;
+    padding: .65rem 1rem;
+    border: 1px solid #dbe3ed;
+    border-left: 4px solid #2563eb;
+    border-radius: 12px;
+    background: linear-gradient(105deg, rgba(239,246,255,.9), rgba(255,255,255,.97) 34%);
+    box-shadow: 0 6px 18px rgba(30, 41, 59, .055);
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .experience-row:nth-child(2) { border-left-color: #4f46e5; }
+  .experience-row:nth-child(3) { border-left-color: #0891b2; }
+  .experience-row:hover { transform: translateX(3px); border-color: #9bb8de; box-shadow: 0 10px 24px rgba(30, 64, 175, .1); }
+
+  .experience-meta {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding-top: 0;
+  }
+
+  .experience-date {
+    color: #1d4ed8;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+
+  .experience-location {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    margin-top: 0;
+    color: #64748b;
+    font-size: .875rem;
+  }
+
+  .experience-heading {
+    display: block;
+  }
+
+  .experience-heading h2 {
+    color: #172033;
+    font-family: "DM Serif Display", serif;
+    font-size: 1.125rem;
+    line-height: 1.15;
+  }
+
+  .experience-company {
+    margin-top: .08rem;
+    color: #64748b;
+    font-size: .875rem;
+  }
+
+  .experience-role {
+    margin-top: .08rem;
+    color: #334155;
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .experience-summary {
+    margin-top: .2rem;
+    color: #475569;
+    font-size: .875rem;
+    line-height: 1.4;
+  }
+
+  .experience-impact { margin-top: .2rem; padding-top: .35rem; border-top: 1px solid #e7ebf1; color: #334155; font-size: .875rem; line-height: 1.4; }
+
+
+  @media (max-width: 767px) {
+  }
+
+  @media (min-width: 768px) and (max-width: 1050px) {
+    .experience-list { gap: .55rem; }
+    .experience-row { padding: .8rem; }
+  }
+</style>

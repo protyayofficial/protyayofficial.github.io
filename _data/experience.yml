@@ -3,25 +3,33 @@
   role: Junior Research Fellow - Federated Learning and Deep Learning
   time: Apr 2025 - Jun 2025
   location: Punjab, India
+  areas: [Federated Learning, Computer Vision, Deep Learning]
   summary: Worked on federated learning for aerial scene classification under the supervision of Dr. Santosh Kumar Vipparthi.
+  impact: Built FedRWA for 12 clients and 313 disjoint classes, improving accuracy by 18.6% and reducing client variance by 57.8% across three backbones.
   details:
-    - Developed FedRWA for disjoint-label federated learning across 12 clients and 313 classes.
-    - Achieved an 18.6% accuracy gain and 57.8% lower client-wise variance across three backbones.
+    - Built FedRWA for 12 clients and 313 disjoint classes.
+    - Improved accuracy by 18.6% and reduced client variance by 57.8% across three backbones.
 
 - company: Image Processing, Security & Analytics Labs, IIT Ropar
   short_name: IPSA Lab, IIT Ropar
   role: Research Intern - Applied Deep Learning
   time: Jul 2024 - Oct 2024
   location: Remote
-  summary: Worked on source camera model identification and developed SPAIR-Swin using high-entropy image patches.
+  areas: [Source Camera Forensics, Computer Vision, PyTorch]
+  summary: Worked on applied computer vision problems spanning camera forensics, disaster imagery, and human-action understanding.
+  impact: Developed SPAIR-Swin across four camera datasets, improved disaster-image F1 scores by 2.41 to 9.93% with ConvSFNet, and advanced yoga-pose recognition with HYPC-Net.
   details:
-    - Evaluated the method across 138 camera models and four forensic benchmarks.
-    - Improved patch-level camera model identification accuracy by up to 20.36%.
+    - Built SPAIR-Swin with entropy-based patch selection for camera identification across four datasets.
+    - Built ConvSFNet for disaster imagery, improving F1 scores by 2.41 to 9.93%.
+    - Built HYPC-Net and improved the previous state of the art on Yoga-82.
 
 - company: mVizn Pte. Ltd.
   role: Machine Learning Intern - 3D Computer Vision
   time: Jan 2024 - Mar 2024
   location: Remote
+  areas: [3D Computer Vision, Point Clouds, Python]
   summary: Worked on indoor point-cloud understanding with PointNet++, improving classification performance by 25%.
+  impact: Improved IoU for underrepresented classes by 30 to 45% and automated data and evaluation workflows to reduce processing time by 30%.
   details:
-    - Improved IoU for underrepresented classes by 30-45% through class-imbalance handling.
+    - Improved IoU for underrepresented classes by 30 to 45%.
+    - Automated data and evaluation workflows, reducing processing time by 30%.

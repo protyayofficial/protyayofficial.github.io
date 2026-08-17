@@ -1,28 +1,31 @@
-<footer class="mt-20 border-t border-slate-800/50 glass-card">
+<footer class="site-footer border-t border-slate-200 glass-card">
   <style>
     .glass-card {
-      background: rgba(20, 30, 50, 0.6);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(20, 184, 166, 0.2);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+    }
+    .site-footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; }
+    @media (max-width: 767px) {
+      .site-footer { position: static; }
     }
   </style>
-  <div class="max-w-7xl mx-auto px-6 py-12">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-center md:text-left">
-        <p class="text-slate-400 text-sm mb-2">
+  <div class="max-w-7xl mx-auto px-6 py-3">
+    <div class="flex justify-between items-center gap-4">
+      <div class="min-w-0 flex items-center gap-3">
+        <p class="text-slate-500 text-xs truncate">
           {{ site.data.meta.footnote | markdownify | strip_html }}
         </p>
-        <p class="text-slate-500 text-xs">
+        <p class="hidden lg:block text-slate-400 text-xs whitespace-nowrap">
           Last Updated: {{ site.time | date: "%B %d, %Y" }}
         </p>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4 flex-shrink-0">
         {% for item in site.data.settings.social %}
         <a
           href="{{ item.link }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-slate-400 hover:text-teal-400 transition-colors text-xl"
+          class="text-slate-500 hover:text-blue-600 transition-colors text-base"
           aria-label="{{ item.name }}"
         >
           <i class="{{ item.icon }}"></i>

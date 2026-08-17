@@ -4,11 +4,11 @@
 # utterances-repo: x
 
 menu:
-- {name: 'About', file: ''}
+- {name: 'About', file: 'index.html'}
 - {name: 'Publications', file: 'research.html'}
 - {name: 'Experience', file: 'experience.html'}
 - {name: 'Visits & Talks', file: 'visits.html'}
-- {name: 'News', file: 'news.html'}
+- {name: 'Timeline', file: 'news.html'}
 # - {name: 'Beyond Research', file: 'beyondresearch.html'}
 
 social:

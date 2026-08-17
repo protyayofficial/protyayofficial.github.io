@@ -3,23 +3,38 @@ layout: content
 title: Visits & Talks
 description: Academic visits, talks, and workshops attended by Protyay Dey.
 intro: A record of research visits, presentations, and workshops beyond my home lab.
+compact: true
 ---
 
-<div class="grid grid-cols-1 gap-7">
+<section class="grid grid-cols-1 gap-3" aria-label="Visits and talks, most recent first">
   {% for item in site.data.visits %}
-  <article class="entry-card card-bg rounded-2xl p-6 md:p-8">
-    <div class="flex flex-col sm:flex-row gap-5">
-      <div class="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center text-slate-950 flex-shrink-0 shadow-lg"><i class="fas {{ item.icon }}"></i></div>
-      <div class="flex-1">
-        <div class="flex flex-wrap items-center gap-3 mb-3">
-          <span class="text-xs font-bold uppercase tracking-wider text-teal-400 bg-teal-400/10 px-3 py-1 rounded-full">{{ item.type }}</span>
-          <span class="text-xs font-bold text-amber-400">{{ item.time }}</span>
+  <article class="group grid min-w-0 grid-cols-[150px_1fr] gap-5 rounded-2xl border border-slate-200 bg-white px-5 py-3 shadow-sm transition hover:border-blue-300 hover:shadow-md">
+    <div class="border-r border-slate-200 pr-4">
+      <time class="text-sm font-bold text-blue-700">{{ item.time }}</time>
+      <span class="mt-2 block text-[0.62rem] font-bold uppercase tracking-[0.1em] text-slate-500">{{ item.type }}</span>
+    </div>
+
+    <div class="min-w-0">
+      <div class="flex items-start gap-3">
+        <span class="mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-blue-50 text-sm text-blue-700" aria-hidden="true">
+          <i class="fas {{ item.icon }}"></i>
+        </span>
+        <div class="min-w-0">
+          <h2 class="font-serif text-lg leading-tight text-slate-900">{{ item.title }}</h2>
+          <p class="mt-1 text-sm font-medium text-slate-500">
+            <i class="fas fa-location-dot mr-1.5 text-blue-600" aria-hidden="true"></i>{{ item.place }}
+          </p>
+          <p class="mt-3 text-sm leading-5 text-slate-600">{{ item.description }}</p>
         </div>
-        <h2 class="text-xl md:text-2xl font-bold text-white mb-2">{{ item.title }}</h2>
-        <p class="text-slate-500 text-sm mb-4"><i class="fas fa-location-dot text-teal-500 mr-2"></i>{{ item.place }}</p>
-        <p class="text-slate-300 leading-relaxed">{{ item.description }}</p>
       </div>
     </div>
   </article>
   {% endfor %}
-</div>
+</section>
+
+<style>
+  @media (max-width: 640px) {
+    main article { grid-template-columns: 1fr !important; gap: .7rem !important; }
+    main article > div:first-child { border-right: 0; border-bottom: 1px solid #e2e8f0; padding: 0 0 .6rem; }
+  }
+</style>

@@ -1,31 +1,63 @@
 ---
 layout: content
-title: News
-description: News and updates from Protyay Dey.
-intro: Research, talks, visits, and milestones from my academic journey.
+title: Academic Timeline
+description: Academic milestones, research roles, talks, and visits of Protyay Dey.
+intro: Education, research appointments, presentations, visits, and other milestones.
+compact: true
 ---
 
 {% assign news_by_year = site.data.news | group_by_exp: "item", "item.time | slice: 0, 4" %}
-<div class="space-y-14">
+<div class="news-browser">
+  <div class="news-years" role="tablist" aria-label="News by year">
+    {% for year in news_by_year %}
+    <button type="button" class="news-year{% if forloop.first %} active{% endif %}" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-news-year="{{ year.name }}">{{ year.name }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="news-results">
   {% for year in news_by_year %}
-  <section class="grid grid-cols-1 md:grid-cols-[110px_1fr] gap-5 md:gap-8">
-    <div>
-      <div class="md:sticky md:top-28 flex md:block items-center gap-4">
-        <h2 class="text-3xl font-serif font-bold gradient-text">{{ year.name }}</h2>
-        <div class="h-px flex-1 md:w-12 md:mt-3 gradient-accent opacity-70"></div>
-      </div>
-    </div>
-    <div class="space-y-5 border-l border-teal-500/20 pl-5 md:pl-8">
+  <section class="news-year-panel{% unless forloop.first %} hidden{% endunless %}" data-news-panel="{{ year.name }}" role="tabpanel">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       {% for item in year.items %}
-      <article class="entry-card card-bg rounded-2xl p-6 md:p-7 relative">
-        <span class="absolute -left-[1.75rem] md:-left-[2.75rem] top-8 w-3 h-3 rounded-full bg-teal-400 ring-4 ring-[#0a0f1e]"></span>
+      <article class="entry-card card-bg rounded-xl p-4">
         {% assign display_time = item.time | remove_first: year.name | strip %}
-        {% if display_time != "" %}<time class="text-amber-400 font-bold text-xs uppercase tracking-wider">{{ display_time }}</time>{% endif %}
-        <h3 class="text-xl font-bold text-white mt-3 mb-3">{{ item.title | markdownify | strip_html }}</h3>
-        <p class="text-slate-300 leading-relaxed">{{ item.highlight }}</p>
+        {% if display_time != "" %}<time class="text-blue-600 font-bold text-xs uppercase tracking-wider">{{ display_time }}</time>{% endif %}
+        <h3 class="text-[.95rem] font-bold text-white mt-1.5 mb-1">{{ item.title | markdownify | strip_html }}</h3>
+        <p class="text-sm text-slate-300 leading-relaxed">{{ item.highlight }}</p>
       </article>
       {% endfor %}
     </div>
   </section>
   {% endfor %}
+  </div>
 </div>
+
+<style>
+  .news-browser { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 1.25rem; }
+  .news-years { display: flex; flex-direction: column; gap: .4rem; }
+  .news-year { padding: .55rem .7rem; border-radius: .6rem; color: #64748b; font-size: .8rem; font-weight: 700; text-align: left; transition: .2s ease; }
+  .news-year:hover { color: #1d4ed8; background: #eef4ff; }
+  .news-year.active { color: #fff; background: #2563eb; box-shadow: 0 5px 14px rgba(37,99,235,.2); }
+  .news-results { min-width: 0; }
+  @media (max-width: 640px) {
+    .news-browser { grid-template-columns: 1fr; }
+    .news-years { flex-direction: row; overflow-x: auto; }
+    .news-year { flex: 0 0 auto; text-align: center; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-news-year]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const year = button.dataset.newsYear;
+      document.querySelectorAll('[data-news-year]').forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-news-panel]').forEach((panel) => {
+        panel.classList.toggle('hidden', panel.dataset.newsPanel !== year);
+      });
+    });
+  });
+</script>
