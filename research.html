@@ -347,7 +347,8 @@ layout: null
                       <div class="pub-meta-small mt-1">
                         {% assign author_list = pub.author | split: "," %} {%
                         for author in author_list %} {% assign name = author |
-                        strip %} {% if name == "Protyay Dey" %}
+                        strip %} {% assign normalized_name = name | remove: "*"
+                        %} {% if normalized_name == "Protyay Dey" %}
                         <span class="text-teal-300 font-medium"
                           >{{ name }}</span
                         >
@@ -356,7 +357,10 @@ layout: null
                         {% endif %}{% unless forloop.last %}, {% endunless %} {%
                         endfor %}
                       </div>
-                      <div class="pub-meta-small mt-1">
+                      {% if pub.author contains "*" %}
+                      <div class="pub-meta-small mt-1">* Equal contribution</div>
+                      {% endif %}
+                      <div class="pub-meta-small mt-1 font-bold text-slate-700">
                         {{ pub.venue | markdownify | strip_html }}
                       </div>
                     </div>
@@ -390,7 +394,8 @@ layout: null
                         %}{% when "code" %}{% if pub.code contains "soon" %}Code
                         (soon){% elsif pub.code contains "data" or pub.code
                         contains "dataset" %}Dataset{% else %}Code{% endif %}{%
-                        else %}{{ tag.name | capitalize }}{% endcase %}</span
+                        when "website" %}Project Page{% else %}{{ tag.name |
+                        capitalize }}{% endcase %}</span
                       >
                     </a>
                     {% endif %} {% endfor %}
